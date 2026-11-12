@@ -1,0 +1,29 @@
+---
+import Portfolio from '../layouts/Portfolio.astro';
+import MediaSlot from '../components/MediaSlot.astro';
+import { prototypeGroups } from '../data/prototypes';
+import { moreWork } from '../data/current';
+import { documents } from '../data/documents';
+---
+<Portfolio title="More Work" description={moreWork[0].description} page="prototypes">
+  <div class="wrap">
+    <a class="back-link" href="/#work"><span aria-hidden="true">←</span> Selected Work</a>
+    <header class="collection-intro"><h1>More Work</h1><p>{moreWork[0].description}</p>
+      <nav class="collection-nav" aria-label="Work categories">{prototypeGroups.map(group => <a class="text-link" href={`#${group.id}`}>{group.title} <span aria-hidden="true">↓</span></a>)}</nav>
+    </header>
+    {prototypeGroups.map(group => <section class="prototype-group" id={group.id} aria-labelledby={`${group.id}-title`}>
+      <div class="section-title"><h2 id={`${group.id}-title`}>{group.title}</h2></div>
+      {group.items.map(item => <article class="work-item prototype-item" id={item.id} aria-labelledby={`${item.id}-title`}>
+        <MediaSlot id={item.hero!.id} label={item.hero!.label} />
+        <div class="work-copy">
+          {item.role && <p class="role">{item.role}</p>}
+          <h3 id={`${item.id}-title`}>{item.href ? <a class="title-link" href={item.href}>{item.title}</a> : item.title}</h3>
+          <p class="project-meta">{item.meta}</p>
+          {(item.href ? [item.description] : item.overview).map(paragraph => <p class="work-summary">{paragraph}</p>)}
+          {item.href ? <a class="text-link" href={item.href}>View Prototype <span aria-hidden="true">↗</span></a> : (() => { const Content = documents[item.id].Content; return <div class="prototype-body"><Content /></div>; })()}
+        </div>
+      </article>)}
+    </section>)}
+    <div class="collection-end"><a class="text-link" href="/#work"><span aria-hidden="true">←</span> Back to selected work</a><a class="text-link" href="#main">Back to top <span aria-hidden="true">↑</span></a></div>
+  </div>
+</Portfolio>

@@ -1,0 +1,47 @@
+/* Approved media use web derivatives; original source files remain outside the site. */
+.media-ready { min-width: 0; }
+.media-ready img, .media-ready video { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 3px; }
+.media-ready video { object-fit: contain; background: #000; }
+.media-ready[data-media-slot="OVERDAWN-TRAILER"] video { object-fit: cover; }
+.work-item > .media-ready > img, .analysis .summary-layout > .media-ready > img { aspect-ratio: 16 / 9; object-fit: cover; }
+.media-frame figcaption { text-align: center; }
+.media-diagram img { width: 100%; max-width: 100%; margin-inline: auto; background: #fff; }
+.media-trio[data-media-group="UNREALTOR-04"] img { background: transparent; border: 0; border-radius: 0; }
+.media-ready audio { display: block; width: 100%; min-width: 0; height: 54px; }
+.media-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-top: 28px; }
+.media-flow-pair { grid-template-columns: var(--media-columns); align-items: start; }
+.media-trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 28px; align-items: start; }
+@media (max-width: 720px) {
+  .media-trio[data-media-group="BATTLE-02"], .media-trio[data-media-group="BATTLE-04"] { grid-template-columns: minmax(0, 1fr); }
+}
+.editorial-body .media-pair .media-frame, .editorial-body .media-trio .media-frame { margin-top: 0; }
+.media-pending[data-media-kind="video"] .media-slot { aspect-ratio: auto; min-height: 130px; }
+.about-layout > .media-portrait img { height: auto; aspect-ratio: auto; }
+.boss-model-table caption { text-align: left; color: var(--muted); font-size: 12px; margin-bottom: 10px; }
+.editorial-body .boss-model-table th:first-child { width: 44%; }
+.boss-model-table tbody th { background: transparent; font-weight: 400; }
+.boss-model-table td { font-variant-numeric: tabular-nums; }
+@media(max-width:720px) {
+  .editorial-body .boss-model-table th, .editorial-body .boss-model-table td { padding: 10px 6px; font-size: 12px; }
+  .media-pair { grid-template-columns: minmax(0, 1fr); }
+  .about-layout > .media-portrait { max-width: 360px; width: 100%; margin-inline: auto; }
+}
+
+.rulebook-reader { display: block; width: 100%; height: min(80vh, 960px); min-height: 480px; border: 1px solid var(--line); border-radius: 3px; background: var(--surface); }
+.pdf-link { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 32px; color: var(--accent); }
+.pdf-link:hover { text-decoration: underline; }
+
+.media-restricted .media-slot { align-items: center; justify-content: center; text-align: center; }
+.media-restriction-note { max-width: 970px; border-left: 2px solid var(--line); padding: 12px 18px; color: var(--muted); font-size: 14px; line-height: 1.8; }
+
+.media-compact img { margin-inline: auto; }
+@media(max-width:720px) { .bazaar-item-group { grid-template-columns: minmax(0, 1fr); } }
+
+.media-equal-height { grid-template-columns: var(--media-columns); align-items: start; max-width: var(--media-group-width); margin-inline: auto; }
+@media(max-width:720px) {
+  .media-equal-height { grid-template-columns: minmax(0, 1fr); }
+  .media-equal-height img { width: auto; height: min(var(--media-image-height), calc((100vw - 44px) / var(--media-max-ratio))); }
+}
+
+.about-copy .prose-link { min-height: 0; gap: 8px; }
+@media(max-width:1000px) { .analysis .summary-layout { grid-template-columns: 41% minmax(0, 1fr); } }

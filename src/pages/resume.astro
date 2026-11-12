@@ -1,0 +1,10 @@
+---
+import Portfolio from '../layouts/Portfolio.astro';
+---
+<Portfolio title="Resume" description="Resume preview and download area for Ethan Bai." page="resume">
+  <div class="wrap">
+    <header class="collection-intro standalone-intro"><h1>Resume</h1><p>The approved resume will be available to preview and download here.</p></header>
+    <section class="resume-section" aria-labelledby="resume-title"><div class="resume-toolbar"><div><h2 id="resume-title">English Resume</h2><p class="small-note" id="resume-status">File to be added</p></div><button class="download-button" disabled aria-describedby="resume-status">Download PDF <span aria-hidden="true">↓</span></button></div><div class="document-slot" role="region" aria-label="Empty resume preview"><p>Resume preview</p><span>The approved PDF has not been connected yet.</span></div></section>
+    <div class="inline-links"><a class="text-link" href="/#work">Browse selected work <span aria-hidden="true">↗</span></a><a class="text-link" href="/about/#contact">Contact <span aria-hidden="true">↗</span></a></div>
+  </div>
+</Portfolio>

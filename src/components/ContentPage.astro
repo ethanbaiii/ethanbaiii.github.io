@@ -1,0 +1,40 @@
+---
+import Portfolio from '../layouts/Portfolio.astro';
+import MediaSlot from './MediaSlot.astro';
+import { documents } from '../data/documents';
+import { selectedWork } from '../data/current';
+import { pageMedia, mediaRestrictions } from '../lib/media.mjs';
+interface Props { id: string }
+const { id } = Astro.props;
+const document = documents[id];
+if (!document) throw new Error(`Unknown editorial document: ${id}`);
+const { Content, frontmatter: content } = document;
+const mediaRestriction = mediaRestrictions[id];
+const heroId = mediaRestriction ? null : pageMedia[id]?.hero || content.hero?.id;
+const headings = document.getHeadings().filter(heading => heading.depth === 2);
+const plain = (text: string) => text.replaceAll('**', '');
+const caseOrder = selectedWork.map(project => project.id);
+const next = content.page === 'case' ? documents[caseOrder[(caseOrder.indexOf(id) + 1) % caseOrder.length]].frontmatter : null;
+---
+<Portfolio title={content.title} description={content.description} page={content.page}>
+  <div class="wrap editorial-page">
+    <a class="back-link" href={content.backHref}><span aria-hidden="true">←</span> {content.backLabel}</a>
+    <header class="case-intro">
+      {content.role && <p class="role">{content.role}</p>}
+      <h1>{content.title}</h1>
+      {content.meta && <p class="case-meta">{content.meta}</p>}
+      {content.translation && <p class="translation-note">{content.translation}</p>}
+      {content.overview.map(paragraph => <p class={paragraph.startsWith('**Current Status:') ? 'implementation-note case-summary' : 'case-summary'}>{plain(paragraph)}</p>)}
+    </header>
+    {mediaRestriction && <p class="media-restriction-note" role="note">{mediaRestriction.detailNotice}</p>}
+    {heroId && <MediaSlot id={heroId} label={content.hero?.label || content.title + ' project introduction'} caption={content.hero?.caption || undefined} class="case-hero-media" eager />}
+    <div class="case-layout">
+      <aside class="case-directory"><nav aria-label="On this page"><p>On this page</p>{headings.map(heading => <a href={`#${heading.slug}`}>{heading.text}</a>)}</nav></aside>
+      <article class="case-body editorial-body" aria-label={content.page === 'analysis' ? `${content.title} full article` : `${content.title} case study`}>
+        <Content />
+        <div class="case-end"><a class="text-link" href={content.backHref}><span aria-hidden="true">←</span> Back to {content.backLabel}</a><a class="text-link" href="#main">Back to top <span aria-hidden="true">↑</span></a></div>
+        {next && <nav class="project-pager" aria-label="Next project"><span>Next project</span><a href={next.href}>{next.title} <span aria-hidden="true">↗</span></a></nav>}
+      </article>
+    </div>
+  </div>
+</Portfolio>

@@ -1,0 +1,13 @@
+<section id="site-music-player" class="music-mini-player" aria-label="Music player" transition:persist="portfolio-music" hidden>
+  <audio id="site-music-audio" preload="none" data-managed-media></audio>
+  <div class="music-mini-heading">
+    <a href="/audio/#music" class="music-mini-title" data-music-title>Music</a>
+    <button type="button" class="music-play-button" data-mini-toggle aria-label="Play music">Play</button>
+    <button type="button" class="music-close-button" data-music-close aria-label="Close music player">×</button>
+  </div>
+  <div class="music-progress-row">
+    <input type="range" min="0" max="1" value="0" step="0.1" data-mini-seek aria-label="Seek current song" disabled />
+    <span class="music-time" data-mini-time>0:00 / 0:00</span>
+  </div>
+  <p class="music-playback-error" role="status" data-music-error hidden></p>
+</section>

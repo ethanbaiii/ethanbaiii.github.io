@@ -1,0 +1,6 @@
+---
+import { renderMedia } from '../lib/media.mjs';
+interface Props { id: string; label: string; caption?: string; class?: string; kind?: 'image' | 'audio' | 'video' | 'pdf'; eager?: boolean; showRestrictedNotice?: boolean }
+const { id, label, caption, class: className = '', kind = 'image', eager = false, showRestrictedNotice = false } = Astro.props;
+---
+<Fragment set:html={renderMedia(id, { label, caption, className, kind, eager, showRestrictedNotice })} />

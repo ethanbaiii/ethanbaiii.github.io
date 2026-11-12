@@ -1,0 +1,24 @@
+---
+import Portfolio from '../layouts/Portfolio.astro';
+import MediaSlot from './MediaSlot.astro';
+import { introduction, selectedWork, moreWork } from '../data/current';
+---
+<Portfolio title="Game Design Student" description={introduction}>
+  <div class="wrap">
+    <section class="home-intro" aria-labelledby="intro-title"><h1 id="intro-title">Game Design Student</h1><p>{introduction}<br /><a class="text-link" href="/about/">About <span aria-hidden="true">↗</span></a></p></section>
+    <section id="work" class="selected-work" aria-labelledby="work-title">
+      <div class="section-title"><h2 id="work-title">Selected Work</h2></div>
+      <div class="work-list">
+        {selectedWork.map(project => <article class="work-item" aria-labelledby={`${project.id}-heading`}>
+          <MediaSlot showRestrictedNotice={project.id === 'sthh'} id={project.mediaId} label={`${project.title} project preview`} />
+          <div class="work-copy"><p class="role">{project.role}</p><h3 id={`${project.id}-heading`}><a class="title-link" href={project.href}>{project.title}</a></h3><p class="project-meta">{project.meta}</p><p class="work-summary">{project.description}</p>
+            <a class="text-link" href={project.href}>View Project <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>)}
+      </div>
+    </section>
+    <section class="more-work" aria-labelledby="more-title"><div class="section-title"><h2 id="more-title">Explore More</h2></div><div class="more-grid">
+      {moreWork.map(item => <article id={item.id === 'prototypes' ? 'game-prototypes' : item.id === 'analysis' ? 'game-analysis' : 'game-audio'}><h3><a class="title-link" href={item.href}>{item.title}</a></h3><p>{item.description}</p><a class="text-link" href={item.href}>{item.action} <span aria-hidden="true">↗</span></a></article>)}
+    </div></section>
+  </div>
+</Portfolio>

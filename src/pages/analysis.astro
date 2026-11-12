@@ -1,0 +1,17 @@
+---
+import Portfolio from '../layouts/Portfolio.astro';
+import MediaSlot from '../components/MediaSlot.astro';
+import { analyses } from '../data/analysis';
+import { moreWork } from '../data/current';
+---
+<Portfolio title="Analysis" description={moreWork[1].description} page="analysis">
+  <div class="wrap">
+    <a class="back-link" href="/#work"><span aria-hidden="true">←</span> Selected Work</a>
+    <header class="collection-intro"><h1>Analysis</h1><p>{moreWork[1].description}</p></header>
+    <div class="summary-collection">{analyses.map(analysis => <article id={analysis.id} aria-labelledby={`${analysis.id}-title`}>
+      <header><h2 id={`${analysis.id}-title`}><a class="title-link" href={analysis.href}>{analysis.title}</a></h2><p class="project-meta">{analysis.meta}</p></header>
+      <div class="summary-layout"><MediaSlot id={analysis.mediaId} label={analysis.mediaLabel} /><div class="prose">{analysis.paragraphs.map(paragraph => <p>{paragraph}</p>)}<a class="text-link" href={analysis.href}>Read the Analysis <span aria-hidden="true">↗</span></a></div></div>
+    </article>)}</div>
+    <div class="collection-end"><a class="text-link" href="/#work"><span aria-hidden="true">←</span> Back to selected work</a><a class="text-link" href="#main">Back to top <span aria-hidden="true">↑</span></a></div>
+  </div>
+</Portfolio>

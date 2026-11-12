@@ -1,0 +1,47 @@
+---
+import '../styles/portfolio.css';
+import '../styles/media.css';
+import '../styles/music-player.css';
+import { ClientRouter } from 'astro:transitions';
+import MusicPlayer from '../components/MusicPlayer.astro';
+interface Props { title: string; description: string; page?: 'home' | 'case' | 'prototypes' | 'analysis' | 'audio' | 'about' | 'resume' | 'not-found' }
+const { title, description, page = 'home' } = Astro.props;
+---
+<!doctype html>
+<html lang="en" transition:animate="none">
+  <head>
+    <ClientRouter fallback="swap" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="description" content={description} />
+    <title>{title} - Ethan Bai</title>
+  </head>
+  <body class={`portfolio ${page}`}>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="header wrap">
+      <a class="wordmark" href="/" aria-label="Ethan Bai homepage">Ethan Bai<span aria-hidden="true">.</span></a>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a class={page === 'home' || page === 'case' ? 'current' : undefined} href="/#work" aria-current={page === 'home' ? 'location' : undefined}>Selected Work</a>
+        <a class={page === 'prototypes' ? 'current' : undefined} href="/prototypes/" aria-current={page === 'prototypes' ? 'page' : undefined}>More Work</a>
+        <a class={page === 'analysis' ? 'current' : undefined} href="/analysis/" aria-current={page === 'analysis' ? 'page' : undefined}>Analysis</a>
+        <a class={page === 'audio' ? 'current' : undefined} href="/audio/" aria-current={page === 'audio' ? 'page' : undefined}>Audio</a>
+        <a class={page === 'about' ? 'current' : undefined} href="/about/" aria-current={page === 'about' ? 'page' : undefined}>About</a>
+        <a class={page === 'resume' ? 'current' : undefined} href="/resume/" aria-current={page === 'resume' ? 'page' : undefined}>Resume</a>
+      </nav>
+      <button class="language-placeholder" type="button" disabled aria-label="Language selection: English; Chinese coming later" title="Language switching will be added later">
+        <span lang="en" class="language-current">EN</span><span aria-hidden="true">/</span><span lang="zh-CN">中文</span>
+      </button>
+    </header>
+    <main id="main"><slot /></main>
+    <footer class="footer wrap">
+      <div><a class="wordmark" href="/">Ethan Bai<span aria-hidden="true">.</span></a><p>Game Design Student</p></div>
+      <div class="footer-actions"><a href="/about/#contact">Contact <span aria-hidden="true">↗</span></a><a href="/resume/">Resume <span aria-hidden="true">↗</span></a></div>
+      <span class="footer-year">2026</span>
+    </footer>
+    <MusicPlayer />
+    <script>
+      import '../scripts/media-playback';
+    </script>
+  </body>
+</html>

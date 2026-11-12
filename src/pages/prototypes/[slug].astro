@@ -1,0 +1,7 @@
+---
+import ContentPage from '../../components/ContentPage.astro';
+import editorial from '../../data/editorial.json';
+export function getStaticPaths() { return editorial.prototypes.filter(item => item.href).map(item => ({ params: { slug: item.id }, props: { id: item.id } })); }
+const { id } = Astro.props;
+---
+<ContentPage id={id} />

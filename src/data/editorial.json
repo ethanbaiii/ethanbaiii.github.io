@@ -1,0 +1,237 @@
+{
+  "updated": "2026-11-05",
+  "introduction": "I enjoy exploring how simple mechanics can come together to create varied gameplay experiences. My projects span combat, systems, and level design, with a focus on developing ideas into playable experiences.",
+  "selectedWork": [
+    {
+      "id": "battle-demo",
+      "role": "Combat & Systems Design",
+      "title": "Skill Inheritance Action Combat Prototype",
+      "meta": "Unity 6 · Solo Project · Sep–Oct 2026",
+      "description": "A third-person combat prototype exploring varied combat through three skills and shared rules. I designed attack modifiers, skill-order effects, and roguelite upgrades chosen for both the player and enemies.",
+      "href": "/work/battle-demo/",
+      "mediaId": "BATTLE-01"
+    },
+    {
+      "id": "sthh",
+      "role": "Character, Combat & Systems Design",
+      "title": "Soft Things Hit Hard",
+      "meta": "Unreal Engine 5 · ~40-Person Team · Mar 2026–Present",
+      "description": "An up-to-eight-player party battle royale built around assembling improvised equipment. I design character behavior, throwing and discarding, and customization, working with engineers and artists to bring the rules into the game.",
+      "href": "/work/sthh/",
+      "mediaId": "STHH-01"
+    },
+    {
+      "id": "way-to-the-sky",
+      "role": "Primary Game Designer",
+      "title": "Way to the Sky",
+      "meta": "Unity · 2-Person Team · 5 Weeks",
+      "description": "A comedic incremental combat game where damage also drives XP gain. As the primary designer, I shaped the overall game design and implemented core gameplay systems in Unity.",
+      "href": "/work/way-to-the-sky/",
+      "mediaId": "WTS-01"
+    },
+    {
+      "id": "the-unrealtor",
+      "role": "Level Design",
+      "title": "The Unrealtor",
+      "meta": "Unity · ~30-Person Team · Jan–May 2026",
+      "description": "A co-op perspective puzzle game. I contributed a parallel final-level structure and iterated object placement and perspective relationships to address puzzle clarity and player flow.",
+      "href": "/work/the-unrealtor/",
+      "mediaId": "UNREALTOR-01"
+    }
+  ],
+  "prototypes": [
+    {
+      "id": "anchor-boat",
+      "title": "Anchor Boat",
+      "role": "",
+      "meta": "Unity · Solo Project · 1 Week",
+      "overview": [
+        "A 3D movement prototype exploring the possibilities of a clear constraint: the boat cannot steer directly left or right. Instead, players use temporary anchors to swing and release along a tangent."
+      ],
+      "description": "A 3D movement prototype exploring the possibilities of a clear constraint: the boat cannot steer directly left or right. Instead, players use temporary anchors to swing and release along a tangent.",
+      "hero": {
+        "id": "ANCHOR-01",
+        "label": "Gameplay",
+        "caption": ""
+      },
+      "page": "prototypes",
+      "href": null,
+      "body": "<h4 id=\"anchor-boat-the-design-experiment\">The Design Experiment</h4>\n\nThe experiment asks how a movement restriction can create interesting choices of its own. Holding an anchor maintains a swing; releasing it turns the current trajectory into a launch. Players choose when to release and whether to use a horizontal dash or a vertical launch, shaping their route through timing rather than direct steering.\n\n<h4 id=\"anchor-boat-giving-movement-a-purpose\">Giving Movement a Purpose</h4>\n\nCombat gives these movement choices a purpose as enemies approach a central objective. Swinging deals low collision damage and boosts automatic turret fire; horizontal launches dash through enemies, while vertical launches deal collision damage in flight and area damage on landing. Different enemy arrangements create opportunities to explore each path."
+    },
+    {
+      "id": "tower-trade-off",
+      "title": "Tower Trade-off",
+      "role": "",
+      "meta": "Unity · Solo Project · 1 Week",
+      "overview": [
+        "A two-part tower-defense prototype exploring what happens when players give up a familiar mechanic.",
+        "Players first choose both tower types and locations. After winning, they give up one choice and defend against the same waves on the same map: keep placement control with randomized tower types, or keep tower selection with randomized placement."
+      ],
+      "description": "A two-part tower-defense prototype exploring what happens when players give up a familiar mechanic.",
+      "hero": {
+        "id": "TOWER-01",
+        "label": "Gameplay",
+        "caption": ""
+      },
+      "page": "prototypes",
+      "href": null,
+      "body": "<h4 id=\"tower-trade-off-findings-reflection\">Findings &amp; Reflection</h4>\n\nIn my playtesting, random placement was more punishing: short-range towers could land beyond reach of the path, making success heavily dependent on luck. Repeatedly choosing the longest-range tower had a clear advantage. Randomizing tower types while keeping placement control was easier.\n\nThis exposed an imbalance between the sacrifices. Placement could determine whether a tower contributed at all, making long range the safest response to uncertainty. The experiment showed how removing one form of control can also narrow the choices left behind: a meaningful sacrifice needs room for adaptation, rather than making options ineffective."
+    },
+    {
+      "id": "spatial-flip-puzzle",
+      "title": "Spatial Flip Puzzle",
+      "role": "",
+      "meta": "Unity · Solo Project · 1 Week",
+      "overview": [
+        "This prototype challenged my spatial puzzle design skills. Players use buttons to flip individual cubes, rows, or columns by 180 degrees, rearranging the space to connect a route to the exit."
+      ],
+      "description": "This prototype challenged my spatial puzzle design skills. Players use buttons to flip individual cubes, rows, or columns by 180 degrees, rearranging the space to connect a route to the exit.",
+      "hero": {
+        "id": "SPATIAL-01",
+        "label": "Gameplay",
+        "caption": ""
+      },
+      "page": "prototypes",
+      "href": null,
+      "body": "I began with a Rubik's Cube-inspired rotation mechanic, aiming for complex puzzles players could solve through step-by-step reasoning. Designing those levels proved difficult, and the final layout was largely linear.\n\n<h4 id=\"spatial-flip-puzzle-findings-reflection\">Findings &amp; Reflection</h4>\n\nDuring playtesting, the number of buttons, available operations, and spatial changes left players disoriented. They began trying inputs at random rather than identifying patterns and working through a solution as intended.\n\nThe level was solvable, but the experience exposed a gap between solvability and readability. Tracking the changing space interfered with the intended reasoning. Testing a spatial puzzle needs to examine whether players can understand what an action changed and use that understanding to plan their next move, alongside checking that a solution exists."
+    },
+    {
+      "id": "god-of-words",
+      "title": "God of Words",
+      "role": "Primary Gameplay Designer",
+      "meta": "Tabletop · 4-Person Team · 3 Weeks",
+      "overview": [
+        "A party game combining secret bidding with creative wordplay. I proposed using letters as the auction material, connecting resource decisions with the answers players create.",
+        "Design Prompt: Multilateral Competition · Auction · Alignment · Involving a Secret That Complicates Player Interactions",
+        "The design connects secret bids for letter-picking priority with assembling and presenting a themed answer."
+      ],
+      "description": "A party game combining secret bidding with creative wordplay. I proposed using letters as the auction material, connecting resource decisions with the answers players create.",
+      "hero": {
+        "id": "GOD-01",
+        "label": "Table setup",
+        "caption": ""
+      },
+      "page": "prototypes",
+      "href": "/prototypes/god-of-words/",
+      "body": "## Gameplay: Bid, Build an Answer, and Persuade\n\nPlayers share a theme and receive a limited budget. Each auction reveals letters, and players secretly bid for picking priority. Everyone participating pays their own bid; higher bids choose first. Players weigh securing a useful letter against saving money for later, and can skip unwanted auctions. Dedicated vowel auctions offer opportunities to complete an idea.\n\nThe collected letters become the material for a themed answer. Players do not need to use every letter: words, phrases, abbreviations, and non-English answers are allowed if the group accepts their connection to the theme. Everyone reveals and explains their answer, then secretly votes for another player's response. The player with the most votes wins.\n\nThis connects two forms of play: planning which letters to pursue and improvising an interpretation from the letters obtained.\n\n## Iteration: More Choice Within the Constraint\n\nEarly feedback showed that spending more did not reliably secure a desired letter. We changed the auction to ranked picking, replaced later random vowel draws with vowel auctions, and allowed players to skip rather than pay for unwanted letters.\n\n<figure class=\"media-frame media-image media-ready\" data-media-slot=\"GOD-PLAYTEST\" data-media-state=\"ready\" data-media-kind=\"image\"><img src=\"/media/god-of-words/playtest.webp\" width=\"1600\" height=\"1057\" alt=\"God of Words playtest.\" loading=\"lazy\" decoding=\"async\" /><figcaption>Playtest</figcaption></figure>\n\nWe kept letter scarcity and declined end-of-game trading. These choices preserved the bidding decisions and the challenge of making something from limited material.\n\n## Adjusting the Auction Phase\n\nThe ending shifted from players exhausting their budgets to a round limit. Initially, the round limit matched the number of players, but four rounds felt too short in a four-player game, so we increased it. However, six-player tests with nine rounds outlasted some players' interest once they had an answer ready. We settled on six rounds before the reveal and voting."
+    },
+    {
+      "id": "sprawl",
+      "title": "Sprawl",
+      "role": "Primary Gameplay Designer",
+      "meta": "Tabletop · 4-Person Team · 3 Weeks",
+      "overview": [
+        "A competitive tile-placement game where players grow vines across a shared board, competing for space while keeping their own growth routes alive.",
+        "Design Prompt: Multilateral Competition · Territory Control · Construction · Involving Nature",
+        "Vine growth connects construction and territory control: players build branching paths and cut off their opponents' growth."
+      ],
+      "description": "A competitive tile-placement game where players grow vines across a shared board, competing for space while keeping their own growth routes alive.",
+      "hero": {
+        "id": "SPRAWL-01",
+        "label": "Vines on the board",
+        "caption": ""
+      },
+      "page": "prototypes",
+      "href": "/prototypes/sprawl/",
+      "body": "## Gameplay: Expand, Cut Off, and Survive\n\nAction cards determine the size of vine tile players may place. Players choose a shape and orientation, then connect it to an open growing tip of their vine. Placement can extend a route, create branches, or cover opponents' vines.\n\nGrowing tips are both expansion points and vulnerable targets. Covering an opponent's tip removes that growth option and earns bonus points; losing every tip eliminates a player. Visible territory scores at the end, while the last surviving vine wins immediately. Players therefore weigh expanding their area against cutting off rivals and preserving their own tips. Special cards can protect a board space or grant an additional action on the next turn.\n\n## Iteration: Creating Conflict and Preserving Planning\n\nEarly tests allowed too much independent expansion. We reduced the initial 13×13 board to 9×9, introduced elimination through blocked tips, and rewarded covering opponents' tips to encourage direct competition.\n\n<figure class=\"media-frame media-image media-ready\" data-media-slot=\"SPRAWL-PLAYTEST\" data-media-state=\"ready\" data-media-kind=\"image\"><img src=\"/media/sprawl/playtest.webp\" width=\"1600\" height=\"1081\" alt=\"Sprawl playtest.\" loading=\"lazy\" decoding=\"async\" /><figcaption>Playtest</figcaption></figure>\n\nInitially, players drew a random shape after an action card determined its size. This could invalidate a planned move. Allowing shape selection removed that second layer of randomness while retaining the action-card constraint.\n\n## Adapting to a Classroom Time Limit\n\nWe were satisfied with the territory-control experience at around 40–60 minutes, but the assignment required under 20. Further board reductions to 7×7, fewer rounds, and additional opening placements aimed to compress the experience.\n\nLater reports still included a 45-minute session. Players enjoyed attacking and anticipating others, but overlapping vines also made connections and growing tips difficult to track. Terminology, diagrams, and indicators were revised; meeting the classroom limit and making the board readable remained separate challenges."
+    },
+    {
+      "id": "tapper-recreate",
+      "title": "Tapper Recreation",
+      "role": "Gameplay Implementation",
+      "meta": "Unity · 2-Person Team · 1 Month",
+      "overview": [
+        "A Unity recreation of Tapper's multi-lane serving loop. Players switch counters, serve drinks to push customers back, and catch returning mugs while managing pressure across lanes."
+      ],
+      "description": "A Unity recreation of Tapper's multi-lane serving loop. Players switch counters, serve drinks to push customers back, and catch returning mugs while managing pressure across lanes.",
+      "hero": {
+        "id": "TAPPER-01",
+        "label": "Gameplay",
+        "caption": ""
+      },
+      "page": "prototypes",
+      "href": null,
+      "body": "I handled the primary gameplay implementation through observation of the original game and AI-assisted development. Level configurations use ScriptableObjects to define per-lane customer queues, repeat counts, queue spacing, and respawn delays, keeping these settings separate from the shared gameplay code."
+    }
+  ],
+  "analyses": [
+    {
+      "id": "honor-of-kings",
+      "title": "The “Overloaded Hero” Problem in Honor of Kings - A Case Study of Chicha",
+      "role": "",
+      "meta": "MOBA Champion & Combat Design Analysis",
+      "paragraphs": [
+        "When does a versatile hero offer meaningful choices, and when does it leave too few weaknesses or counterplay options? Using Chicha's weapon rotation as a case study, I examine the trade-offs behind functional coverage, form progression, and lane flexibility, then propose clearer roles and limits for each form."
+      ],
+      "mediaId": "HOK-01",
+      "mediaLabel": "Five weapons and three forms",
+      "href": "/analysis/honor-of-kings/"
+    },
+    {
+      "id": "the-bazaar",
+      "title": "Why The Bazaar Is Fun - and Keeps Me Coming Back",
+      "role": "",
+      "meta": "Roguelike Build & System Design Analysis",
+      "paragraphs": [
+        "What makes The Bazaar fun, and why is it so easy to keep playing? I explore the satisfaction of discovering item combinations and watching them work, and how each fight gives players something else to try. A Vanessa build illustrates how item pools, board space, and tags turn individual effects into combinations worth pursuing."
+      ],
+      "mediaId": "BAZAAR-01",
+      "mediaLabel": "Game overview",
+      "href": "/analysis/the-bazaar/"
+    }
+  ],
+  "about": [
+    "Hi, I'm Ethan. I study Game Development and Interactive Design at the University of Southern California in Los Angeles.",
+    "I play a wide range of games, especially strategy, roguelite, puzzle, and competitive multiplayer titles. I enjoy figuring out how their mechanics work together and exploring the different choices they give players.",
+    "I'm especially interested in how a few simple mechanics can create different ways to play. In my own designs, I want to give players room to experiment, discover combinations, and develop their own approaches.",
+    "Outside of games, I make music and enjoy exploring different styles, from electronic tracks to instrumental compositions. It gives me another way to experiment with ideas, this time through sound. You can listen to some of my work on the Audio page.",
+    "I'd describe myself as thoughtful and patient. I like hearing how other people see a problem, and I'm comfortable reconsidering an idea when a conversation or playtest gives me a reason to. I enjoy working with people who bring different perspectives."
+  ],
+  "overdawn": {
+    "title": "Overdawn",
+    "role": "Audio Lead & Sound Designer",
+    "meta": "Unity · ~20-Person Team · Sep 2025–Feb 2026",
+    "paragraphs": [
+      "I led a three-person audio team and created over 100 sound assets for this 2.5D shooter released on Steam. My work covered combat, abilities, UI, and environments, including the hidden boss's audio. The case study follows a charge-up sound from its first version to the team's adopted revision."
+    ],
+    "href": "/audio/overdawn/"
+  },
+  "music": [
+    {
+      "order": 1,
+      "title": "Faultline",
+      "titleZh": "Faultline",
+      "genre": "Glitch Dubstep"
+    },
+    {
+      "order": 2,
+      "title": "Late Night Radio",
+      "titleZh": "Late Night Radio",
+      "genre": "Lo-fi Hip-Hop"
+    },
+    {
+      "order": 3,
+      "title": "Afterimage",
+      "titleZh": "Afterimage",
+      "genre": "Glitch Drum & Bass"
+    },
+    {
+      "order": 4,
+      "title": "Burning in My Soul",
+      "titleZh": "Burning in My Soul",
+      "genre": "House"
+    },
+    {
+      "order": 5,
+      "title": "A Leisure Under Moonlight",
+      "titleZh": "月光下的小憩",
+      "genre": "Composition for Clarinet and Harp"
+    },
+    {
+      "order": 6,
+      "title": "I'm Always",
+      "titleZh": "I'm Always",
+      "genre": "French House"
+    }
+  ]
+}

@@ -1,0 +1,802 @@
+{
+  "updated": "2026-11-09",
+  "items": {
+    "ABOUT-01": {
+      "kind": "image",
+      "src": "/media/about/ethan.webp",
+      "width": 1600,
+      "height": 2134,
+      "alt": "Ethan seated on a rock beneath a blue sky.",
+      "caption": "",
+      "diagram": false,
+      "displayWidth": null,
+      "portrait": true
+    },
+    "ANCHOR-01": {
+      "kind": "video",
+      "src": "/media/anchor-boat/gameplay.mp4",
+      "poster": "/media/anchor-boat/poster.webp",
+      "alt": "Anchor Boat gameplay",
+      "caption": "Gameplay",
+      "width": 1280,
+      "height": 720
+    },
+    "BATTLE-01": {
+      "kind": "image",
+      "src": "/media/action-combat/cover.webp",
+      "width": 1600,
+      "height": 873,
+      "alt": "Skill Inheritance Action Combat Prototype gameplay cover",
+      "caption": "",
+      "diagram": false,
+      "displayWidth": null,
+      "portrait": false
+    },
+    "BATTLE-03": {
+      "kind": "video",
+      "src": "/media/action-combat/attack-modifiers.mp4",
+      "poster": "/media/action-combat/posters/attack-modifiers.webp",
+      "alt": "Skill Inheritance Action Combat Prototype: Attack modifiers",
+      "caption": "Attack modifiers",
+      "width": 1280,
+      "height": 720
+    },
+    "BATTLE-05": {
+      "kind": "video",
+      "src": "/media/action-combat/enemy-behavior.mp4",
+      "poster": "/media/action-combat/posters/enemy-behavior.webp",
+      "alt": "Skill Inheritance Action Combat Prototype: Enemy behavior",
+      "caption": "Enemy behavior",
+      "width": 1280,
+      "height": 720
+    },
+    "BATTLE-06": {
+      "kind": "image",
+      "src": "/media/action-combat/roguelite.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "Player and enemy upgrade choices",
+      "caption": "Player and enemy upgrades",
+      "diagram": false,
+      "displayWidth": null,
+      "portrait": false
+    },
+    "BATTLE-GAMEPLAY": {
+      "kind": "video",
+      "src": "/media/action-combat/gameplay.mp4",
+      "poster": "/media/action-combat/cover.webp",
+      "alt": "Skill Inheritance Action Combat Prototype: Gameplay",
+      "caption": "Gameplay",
+      "width": 1280,
+      "height": 720
+    },
+    "BATTLE-LEGACY-1": {
+      "kind": "video",
+      "src": "/media/action-combat/legacy/skill-1.mp4",
+      "poster": "/media/action-combat/posters/legacy/skill-1.webp",
+      "alt": "Skill Inheritance Action Combat Prototype: Slam Legacy",
+      "caption": "Slam Legacy",
+      "width": 720,
+      "height": 960
+    },
+    "BATTLE-LEGACY-2": {
+      "kind": "video",
+      "src": "/media/action-combat/legacy/skill-2.mp4",
+      "poster": "/media/action-combat/posters/legacy/skill-2.webp",
+      "alt": "Skill Inheritance Action Combat Prototype: Barrage Legacy",
+      "caption": "Barrage Legacy",
+      "width": 720,
+      "height": 960
+    },
+    "BATTLE-LEGACY-3": {
+      "kind": "video",
+      "src": "/media/action-combat/legacy/skill-3.mp4",
+      "poster": "/media/action-combat/posters/legacy/skill-3.webp",
+      "alt": "Skill Inheritance Action Combat Prototype: Burst Legacy",
+      "caption": "Burst Legacy",
+      "width": 720,
+      "height": 960
+    },
+    "BATTLE-SKILL-1": {
+      "kind": "video",
+      "src": "/media/action-combat/skills/skill-1.mp4",
+      "poster": "/media/action-combat/posters/skills/skill-1.webp",
+      "alt": "Skill Inheritance Action Combat Prototype: Slam",
+      "caption": "Slam",
+      "width": 720,
+      "height": 960
+    },
+    "BATTLE-SKILL-2": {
+      "kind": "video",
+      "src": "/media/action-combat/skills/skill-2.mp4",
+      "poster": "/media/action-combat/posters/skills/skill-2.webp",
+      "alt": "Skill Inheritance Action Combat Prototype: Barrage",
+      "caption": "Barrage",
+      "width": 720,
+      "height": 960
+    },
+    "BATTLE-SKILL-3": {
+      "kind": "video",
+      "src": "/media/action-combat/skills/skill-3.mp4",
+      "poster": "/media/action-combat/posters/skills/skill-3.webp",
+      "alt": "Skill Inheritance Action Combat Prototype: Burst",
+      "caption": "Burst",
+      "width": 720,
+      "height": 960
+    },
+    "BAZAAR-01": {
+      "kind": "image",
+      "src": "/media/the-bazaar/cover.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "The Bazaar cover.",
+      "caption": "",
+      "diagram": false,
+      "displayWidth": null,
+      "portrait": false
+    },
+    "BAZAAR-ADJUST": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-2/adjust.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "The Bazaar: Adjusting the build.",
+      "caption": "Adjusting the build",
+      "diagram": false,
+      "displayWidth": null,
+      "portrait": false
+    },
+    "BAZAAR-BATTLE": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-2/battle.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "The Bazaar: Combat.",
+      "caption": "Combat",
+      "diagram": false,
+      "displayWidth": null,
+      "portrait": false
+    },
+    "BAZAAR-COMBO-1": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-6/combination-1.png",
+      "width": 624,
+      "height": 610,
+      "alt": "The Bazaar: Combination example 1.",
+      "caption": "Combination example 1",
+      "diagram": false,
+      "displayWidth": 240,
+      "portrait": false
+    },
+    "BAZAAR-COMBO-2": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-6/combination-2.png",
+      "width": 622,
+      "height": 644,
+      "alt": "The Bazaar: Combination example 2.",
+      "caption": "Combination example 2",
+      "diagram": false,
+      "displayWidth": 240,
+      "portrait": false
+    },
+    "BAZAAR-COMBO-3": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-6/combination-3.png",
+      "width": 624,
+      "height": 698,
+      "alt": "The Bazaar: Combination example 3.",
+      "caption": "Combination example 3",
+      "diagram": false,
+      "displayWidth": 240,
+      "portrait": false
+    },
+    "BAZAAR-CORE-LOOP": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-2/core-game-loop.png",
+      "width": 1132,
+      "height": 630,
+      "alt": "The Bazaar: Core game loop.",
+      "caption": "Core game loop",
+      "diagram": false,
+      "displayWidth": 440,
+      "portrait": false
+    },
+    "BAZAAR-DAY": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-3/daily-schedule.png",
+      "width": 1000,
+      "height": 433,
+      "alt": "The Bazaar: Daily schedule.",
+      "caption": "Daily schedule",
+      "diagram": false,
+      "displayWidth": null,
+      "portrait": false
+    },
+    "BAZAAR-EARLY-SHOPS": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-4/early-shops.png",
+      "width": 1270,
+      "height": 434,
+      "alt": "The Bazaar: Early shops.",
+      "caption": "Early shops",
+      "diagram": false,
+      "displayWidth": 600,
+      "portrait": false
+    },
+    "BAZAAR-ENEMY-RARITY": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-4/monster-choices.png",
+      "width": 910,
+      "height": 424,
+      "alt": "The Bazaar: Monster choices.",
+      "caption": "Monster choices",
+      "diagram": false,
+      "displayWidth": 560,
+      "portrait": false
+    },
+    "BAZAAR-FROG-HOLLOW": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-6/frog-hollow.png",
+      "width": 626,
+      "height": 582,
+      "alt": "The Bazaar: Frog Hollow.",
+      "caption": "Frog Hollow",
+      "diagram": false,
+      "displayWidth": 280,
+      "portrait": false
+    },
+    "BAZAAR-LARGE": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-5/large.png",
+      "width": 626,
+      "height": 712,
+      "alt": "The Bazaar: Large item.",
+      "caption": "Large item",
+      "diagram": false,
+      "displayWidth": 240,
+      "portrait": false
+    },
+    "BAZAAR-LATE-SHOPS": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-4/late-shops.png",
+      "width": 1264,
+      "height": 452,
+      "alt": "The Bazaar: Later shops.",
+      "caption": "Later shops",
+      "diagram": false,
+      "displayWidth": 600,
+      "portrait": false
+    },
+    "BAZAAR-MEDIUM": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-5/medium.png",
+      "width": 626,
+      "height": 572,
+      "alt": "The Bazaar: Medium item.",
+      "caption": "Medium item",
+      "diagram": false,
+      "displayWidth": 240,
+      "portrait": false
+    },
+    "BAZAAR-PIANO": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-6/piano.png",
+      "width": 626,
+      "height": 608,
+      "alt": "The Bazaar: Piano.",
+      "caption": "Piano",
+      "diagram": false,
+      "displayWidth": 280,
+      "portrait": false
+    },
+    "BAZAAR-PVE": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-3/pve.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "The Bazaar: Monster encounter.",
+      "caption": "Monster encounter",
+      "diagram": false,
+      "displayWidth": null,
+      "portrait": false
+    },
+    "BAZAAR-PVP": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-3/pvp.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "The Bazaar: Player battle.",
+      "caption": "Player battle",
+      "diagram": false,
+      "displayWidth": null,
+      "portrait": false
+    },
+    "BAZAAR-SHARK-RAY": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-6/shark-ray.png",
+      "width": 626,
+      "height": 572,
+      "alt": "The Bazaar: Shark Ray.",
+      "caption": "Shark Ray",
+      "diagram": false,
+      "displayWidth": 280,
+      "portrait": false
+    },
+    "BAZAAR-SHOP": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-2/shop.png",
+      "width": 752,
+      "height": 514,
+      "alt": "The Bazaar: Shopping.",
+      "caption": "Shopping",
+      "diagram": false,
+      "displayWidth": 480,
+      "portrait": false
+    },
+    "BAZAAR-SMALL": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-5/small.png",
+      "width": 624,
+      "height": 606,
+      "alt": "The Bazaar: Small item.",
+      "caption": "Small item",
+      "diagram": false,
+      "displayWidth": 240,
+      "portrait": false
+    },
+    "BAZAAR-TORTUGA": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-6/tortuga.png",
+      "width": 628,
+      "height": 816,
+      "alt": "The Bazaar: Tortuga.",
+      "caption": "Tortuga",
+      "diagram": false,
+      "displayWidth": 220,
+      "portrait": false
+    },
+    "GOD-01": {
+      "kind": "image",
+      "src": "/media/god-of-words/cover.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "God of Words prototype cover.",
+      "caption": "",
+      "diagram": false,
+      "displayWidth": null,
+      "portrait": false
+    },
+    "GOD-PLAYTEST": {
+      "kind": "image",
+      "src": "/media/god-of-words/playtest.webp",
+      "width": 1600,
+      "height": 1057,
+      "alt": "God of Words playtest.",
+      "caption": "Playtest",
+      "diagram": false,
+      "displayWidth": null,
+      "portrait": false
+    },
+    "GOD-RULEBOOK": {
+      "kind": "pdf",
+      "src": "/media/god-of-words/rulebook.pdf",
+      "alt": "God of Words rulebook",
+      "caption": ""
+    },
+    "HOK-01": {
+      "kind": "image",
+      "src": "/media/honor-of-kings/cover.webp",
+      "width": 1600,
+      "height": 735,
+      "alt": "Chicha, Honor of Kings.",
+      "caption": "",
+      "diagram": false,
+      "displayWidth": null,
+      "portrait": false
+    },
+    "HOK-BASIC-ATTACK": {
+      "kind": "video",
+      "src": "/media/honor-of-kings/basic-attacks.mp4",
+      "poster": "/media/honor-of-kings/posters/basic-attacks.webp",
+      "alt": "Chicha: Basic attacks.",
+      "caption": "Basic attacks",
+      "width": 1280,
+      "height": 720
+    },
+    "HOK-DEFENSE": {
+      "kind": "video",
+      "src": "/media/honor-of-kings/defense.mp4",
+      "poster": "/media/honor-of-kings/posters/defense.webp",
+      "alt": "Chicha: Defense form abilities.",
+      "caption": "Defense form abilities",
+      "width": 1280,
+      "height": 720
+    },
+    "HOK-OFFENSE": {
+      "kind": "video",
+      "src": "/media/honor-of-kings/offense.mp4",
+      "poster": "/media/honor-of-kings/posters/offense.webp",
+      "alt": "Chicha: Offense form abilities.",
+      "caption": "Offense form abilities",
+      "width": 1280,
+      "height": 720
+    },
+    "HOK-OVERKILL": {
+      "kind": "video",
+      "src": "/media/honor-of-kings/overkill.mp4",
+      "poster": "/media/honor-of-kings/posters/overkill.webp",
+      "alt": "Chicha: Overkill form abilities.",
+      "caption": "Overkill form abilities",
+      "width": 1280,
+      "height": 720
+    },
+    "HOK-TYPICAL": {
+      "kind": "video",
+      "src": "/media/honor-of-kings/typical-gameplay.mp4",
+      "poster": "/media/honor-of-kings/posters/typical-gameplay.webp",
+      "alt": "Chicha: Typical gameplay.",
+      "caption": "Typical gameplay",
+      "width": 1280,
+      "height": 720
+    },
+    "MUSIC-01": {
+      "kind": "audio",
+      "src": "/media/music/faultline.mp3",
+      "alt": "Faultline",
+      "caption": "",
+      "duration": 89.155875
+    },
+    "MUSIC-02": {
+      "kind": "audio",
+      "src": "/media/music/late-night-radio.mp3",
+      "alt": "Late Night Radio",
+      "caption": "",
+      "duration": 184.607325
+    },
+    "MUSIC-03": {
+      "kind": "audio",
+      "src": "/media/music/afterimage.mp3",
+      "alt": "Afterimage",
+      "caption": "",
+      "duration": 89.23425
+    },
+    "MUSIC-04": {
+      "kind": "audio",
+      "src": "/media/music/burning-in-my-soul.mp3",
+      "alt": "Burning in My Soul",
+      "caption": "",
+      "duration": 225.01875
+    },
+    "MUSIC-05": {
+      "kind": "audio",
+      "src": "/media/music/a-leisure-under-moonlight.mp3",
+      "alt": "A Leisure Under Moonlight",
+      "caption": "",
+      "duration": 106.239938
+    },
+    "MUSIC-06": {
+      "kind": "audio",
+      "src": "/media/music/im-always.mp3",
+      "alt": "I'm Always",
+      "caption": "",
+      "duration": 234.1616
+    },
+    "OVERDAWN-COVER": {
+      "kind": "image",
+      "src": "/media/overdawn/cover.webp",
+      "width": 920,
+      "height": 430,
+      "alt": "Overdawn project cover with its two playable characters",
+      "caption": "",
+      "diagram": false,
+      "displayWidth": null,
+      "portrait": false
+    },
+    "OVERDAWN-RED-COVER": {
+      "kind": "image",
+      "src": "/media/overdawn/red-cover.webp",
+      "width": 1232,
+      "height": 706,
+      "alt": "Overdawn trailer cover",
+      "caption": "",
+      "diagram": false,
+      "displayWidth": null,
+      "portrait": false
+    },
+    "OVERDAWN-SHOWCASE": {
+      "kind": "video",
+      "src": "/media/overdawn/sound-showcase.en.mp4",
+      "poster": "/media/overdawn/posters/sound-showcase.en.webp",
+      "alt": "Overdawn hidden boss sound showcase, including charge-up V1 and V2",
+      "caption": "Hidden boss sound showcase",
+      "width": 1280,
+      "height": 720
+    },
+    "OVERDAWN-TRAILER": {
+      "kind": "video",
+      "src": "/media/overdawn/trailer.mp4",
+      "poster": "/media/overdawn/red-cover.webp",
+      "alt": "Overdawn project trailer",
+      "caption": "Project trailer",
+      "width": 1280,
+      "height": 720
+    },
+    "SPATIAL-01": {
+      "kind": "video",
+      "src": "/media/spatial-flip-puzzle/gameplay.mp4",
+      "poster": "/media/spatial-flip-puzzle/poster.webp",
+      "alt": "Spatial Flip Puzzle gameplay",
+      "caption": "Gameplay",
+      "width": 1280,
+      "height": 720
+    },
+    "SPRAWL-01": {
+      "kind": "image",
+      "src": "/media/sprawl/cover.webp",
+      "width": 1600,
+      "height": 862,
+      "alt": "Sprawl prototype cover.",
+      "caption": "",
+      "diagram": false,
+      "displayWidth": null,
+      "portrait": false
+    },
+    "SPRAWL-PLAYTEST": {
+      "kind": "image",
+      "src": "/media/sprawl/playtest.webp",
+      "width": 1600,
+      "height": 1081,
+      "alt": "Sprawl playtest.",
+      "caption": "Playtest",
+      "diagram": false,
+      "displayWidth": null,
+      "portrait": false
+    },
+    "SPRAWL-RULEBOOK": {
+      "kind": "pdf",
+      "src": "/media/sprawl/rulebook.pdf",
+      "alt": "Sprawl rulebook",
+      "caption": ""
+    },
+    "TAPPER-01": {
+      "kind": "video",
+      "src": "/media/tapper-recreate/gameplay.mp4",
+      "poster": "/media/tapper-recreate/poster.webp",
+      "alt": "Tapper Recreation gameplay",
+      "caption": "Gameplay",
+      "width": 1280,
+      "height": 720
+    },
+    "TOWER-01": {
+      "kind": "video",
+      "src": "/media/tower-trade-off/gameplay.mp4",
+      "poster": "/media/tower-trade-off/poster.webp",
+      "alt": "Tower Trade-off gameplay",
+      "caption": "Gameplay",
+      "width": 1280,
+      "height": 720
+    },
+    "UNREALTOR-01": {
+      "kind": "image",
+      "src": "/media/the-unrealtor/cover.webp",
+      "width": 1232,
+      "height": 706,
+      "alt": "The Unrealtor project cover with its two characters",
+      "caption": "",
+      "diagram": false,
+      "displayWidth": null,
+      "portrait": false
+    },
+    "UNREALTOR-02": {
+      "kind": "image",
+      "src": "/media/the-unrealtor/living-room-connections.png",
+      "width": 1501,
+      "height": 820,
+      "alt": "The Unrealtor living-room connections.",
+      "caption": "Living-room connections",
+      "diagram": false,
+      "displayWidth": null,
+      "portrait": false
+    },
+    "UNREALTOR-FLOW-AFTER": {
+      "kind": "image",
+      "src": "/media/the-unrealtor/flow-after.png",
+      "width": 1125,
+      "height": 1080,
+      "alt": "The Unrealtor revised parallel level-flow diagram.",
+      "caption": "After · Parallel flow",
+      "diagram": true,
+      "displayWidth": null,
+      "portrait": false
+    },
+    "UNREALTOR-FLOW-BEFORE": {
+      "kind": "image",
+      "src": "/media/the-unrealtor/flow-before.png",
+      "width": 1179,
+      "height": 1080,
+      "alt": "The Unrealtor original linear level-flow diagram.",
+      "caption": "Before · Linear flow",
+      "diagram": true,
+      "displayWidth": null,
+      "portrait": false
+    },
+    "UNREALTOR-HINT-INTERACT": {
+      "kind": "image",
+      "src": "/media/the-unrealtor/hint-interaction.png",
+      "width": 370,
+      "height": 522,
+      "alt": "The Unrealtor interaction hint.",
+      "caption": "Interaction hint",
+      "diagram": true,
+      "displayWidth": 152,
+      "portrait": false
+    },
+    "UNREALTOR-HINT-SILHOUETTE": {
+      "kind": "image",
+      "src": "/media/the-unrealtor/hint-silhouette.png",
+      "width": 370,
+      "height": 520,
+      "alt": "The Unrealtor silhouette hint.",
+      "caption": "Silhouette hint",
+      "diagram": true,
+      "displayWidth": 152,
+      "portrait": false
+    },
+    "UNREALTOR-HINT-TEXT": {
+      "kind": "image",
+      "src": "/media/the-unrealtor/hint-text.png",
+      "width": 372,
+      "height": 522,
+      "alt": "The Unrealtor text hint.",
+      "caption": "Text hint",
+      "diagram": true,
+      "displayWidth": 154,
+      "portrait": false
+    },
+    "UNREALTOR-TRAILER": {
+      "kind": "video",
+      "src": "/media/the-unrealtor/trailer.mp4",
+      "poster": "/media/the-unrealtor/cover.webp",
+      "alt": "The Unrealtor project trailer",
+      "caption": "Project trailer",
+      "width": 1280,
+      "height": 720
+    },
+    "WTS-01": {
+      "kind": "image",
+      "src": "/media/way-to-the-sky/cover.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "Way to the Sky training gameplay",
+      "caption": "",
+      "diagram": false,
+      "displayWidth": null,
+      "portrait": false
+    },
+    "WTS-02": {
+      "kind": "image",
+      "src": "/media/way-to-the-sky/core-loop.en.png",
+      "width": 886,
+      "height": 702,
+      "alt": "Training loop: swipe to attack, earn XP equal to damage, upgrade stats, challenge a boss and unlock a new ability.",
+      "caption": "Core game loop",
+      "diagram": true,
+      "displayWidth": 360,
+      "portrait": false
+    },
+    "WTS-BOSS-FIGHT": {
+      "kind": "image",
+      "src": "/media/way-to-the-sky/boss-fight.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "A Way to the Sky boss encounter with player and boss health bars.",
+      "caption": "Boss encounter",
+      "diagram": false,
+      "displayWidth": null,
+      "portrait": false
+    },
+    "WTS-CRITICAL": {
+      "kind": "image",
+      "src": "/media/way-to-the-sky/critical.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "Critical hit with an orange impact graphic and a red 162 damage number.",
+      "caption": "Critical hit",
+      "diagram": false,
+      "displayWidth": null,
+      "portrait": false
+    },
+    "WTS-NORMAL": {
+      "kind": "image",
+      "src": "/media/way-to-the-sky/normal.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "Normal hit with a white 108 damage number.",
+      "caption": "Normal hit",
+      "diagram": false,
+      "displayWidth": null,
+      "portrait": false
+    },
+    "WTS-PROGRESSION": {
+      "kind": "image",
+      "src": "/media/way-to-the-sky/progression.en.png",
+      "width": 562,
+      "height": 350,
+      "alt": "Conceptual upgrade-effort curve showing new progression variables unlocked after Boss 1 and Boss 2.",
+      "caption": "Conceptual progression curve",
+      "diagram": true,
+      "displayWidth": 320,
+      "portrait": false
+    },
+    "WTS-TITLE": {
+      "kind": "image",
+      "src": "/media/way-to-the-sky/title.webp",
+      "width": 1600,
+      "height": 900,
+      "alt": "Way to the Sky title screen",
+      "caption": "",
+      "diagram": false,
+      "displayWidth": null,
+      "portrait": false
+    },
+    "WTS-UPGRADE": {
+      "kind": "image",
+      "src": "/media/way-to-the-sky/upgrades.webp",
+      "width": 1600,
+      "height": 901,
+      "alt": "Upgrade interface showing damage, critical chance, a locked critical multiplier, and health.",
+      "caption": "Stat upgrades and unlocks",
+      "diagram": false,
+      "displayWidth": null,
+      "portrait": false
+    },
+    "WTS-WALKTHROUGH": {
+      "kind": "video",
+      "src": "/media/way-to-the-sky/walkthrough.mp4",
+      "poster": "/media/way-to-the-sky/title.webp",
+      "alt": "Way to the Sky accelerated-growth gameplay walkthrough",
+      "caption": "Accelerated-growth walkthrough",
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "pages": {
+    "battle-demo": {
+      "hero": "BATTLE-GAMEPLAY"
+    },
+    "honor-of-kings": {
+      "hero": "HOK-01"
+    },
+    "the-bazaar": {
+      "hero": "BAZAAR-01"
+    },
+    "way-to-the-sky": {
+      "hero": "WTS-WALKTHROUGH"
+    },
+    "the-unrealtor": {
+      "hero": "UNREALTOR-TRAILER"
+    },
+    "overdawn": {
+      "hero": "OVERDAWN-TRAILER"
+    },
+    "god-of-words": {
+      "hero": "GOD-RULEBOOK"
+    },
+    "sprawl": {
+      "hero": "SPRAWL-RULEBOOK"
+    }
+  },
+  "restrictions": {
+    "sthh": {
+      "idPrefix": "STHH-",
+      "sourcePrefix": "01_STHH/",
+      "outputPrefix": "sthh/",
+      "homepageNotice": "Media not available for public display.",
+      "detailNotice": "Project media is not available for public viewing at this stage. Examples of my own work may be shared privately with recruiters in accordance with project guidelines.",
+      "blockedSha256": [
+        "b66752772c0b31ca2891f42d10ed61b23e891c56ea8236c368d576fdd5a11b90",
+        "35272b807001f779d77d800839bdd33119b2a53d4693425c18a8fbe6ac385f64"
+      ]
+    }
+  }
+}
