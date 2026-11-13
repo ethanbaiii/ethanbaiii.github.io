@@ -1,0 +1,29 @@
+/* Locally hosted variable fonts. Licenses are included in public/fonts/. */
+@font-face {
+  font-family: 'Instrument Sans';
+  src: url('/fonts/instrument-sans-latin.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Instrument Sans';
+  src: url('/fonts/instrument-sans-italic-latin.woff2') format('woff2');
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('/fonts/space-grotesk-latin.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+}
+:root {
+  --font-body: 'Instrument Sans', Arial, Helvetica, sans-serif;
+  --font-display: 'Space Grotesk', var(--font-body);
+}
+/* The opening name and page titles carry the display face; other text stays unified. */
+h1,
+.intro-title { font-family: var(--font-display); }

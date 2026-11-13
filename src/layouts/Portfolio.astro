@@ -1,4 +1,5 @@
 ---
+import '../styles/typography.css';
 import '../styles/portfolio.css';
 import '../styles/media.css';
 import '../styles/music-player.css';
@@ -12,6 +13,9 @@ const { title, description, page = 'home' } = Astro.props;
 <!doctype html>
 <html lang="en" transition:animate="none">
   <head>
+    <meta charset="UTF-8" />
+    <link rel="preload" href="/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
     <script is:inline>
       (() => {
         if (window.__portfolioIntroDocument) return;
@@ -45,7 +49,6 @@ const { title, description, page = 'home' } = Astro.props;
       }
     </style>
     <ClientRouter fallback="swap" />
-    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex,nofollow" />
     <meta name="description" content={description} />

@@ -46,3 +46,12 @@ The opening title adapts the Effect 9 (Babooner) motion parameters: individual r
 Resource terms from the upstream README:
 
 This resource can be used freely if integrated or build upon in personal or commercial projects such as websites, web apps and web templates intended for sale. It is not allowed to take the resource "as-is" and sell it, redistribute, re-publish it, or sell "pluginized" versions of it. Free plugins built using this resource should have a visible mention and link to the original work. Always consider the licenses of all included libraries, scripts and images used.
+
+
+## Instrument Sans and Space Grotesk
+
+Instrument Sans: Copyright 2022 The Instrument Sans Project Authors (https://github.com/Instrument/instrument-sans).
+
+Space Grotesk: Copyright 2020 The Space Grotesk Project Authors (https://github.com/floriankarsten/space-grotesk).
+
+Both font families are distributed under the SIL Open Font License, Version 1.1. The Latin WOFF2 files are hosted locally in `public/fonts/`. Complete license notices are preserved in [instrument-sans-OFL.txt](public/fonts/instrument-sans-OFL.txt) and [space-grotesk-OFL.txt](public/fonts/space-grotesk-OFL.txt).
