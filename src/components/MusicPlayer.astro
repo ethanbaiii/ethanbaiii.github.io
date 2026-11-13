@@ -1,8 +1,11 @@
+---
+import PlayPauseIcon from './PlayPauseIcon.astro';
+---
 <section id="site-music-player" class="music-mini-player" aria-label="Music player" transition:persist="portfolio-music" hidden>
   <audio id="site-music-audio" preload="none" data-managed-media></audio>
   <div class="music-mini-heading">
     <a href="/audio/#music" class="music-mini-title" data-music-title>Music</a>
-    <button type="button" class="music-play-button" data-mini-toggle aria-label="Play music">Play</button>
+    <button type="button" class="music-play-button" data-mini-toggle aria-label="Play music" aria-pressed="false"><PlayPauseIcon /></button>
     <button type="button" class="music-close-button" data-music-close aria-label="Close music player">×</button>
   </div>
   <div class="music-progress-row">

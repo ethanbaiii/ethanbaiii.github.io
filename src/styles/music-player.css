@@ -15,3 +15,10 @@
 .music-playback-error { margin-top: 8px; font-size: 12px; color: var(--accent); }
 body:has(.music-mini-player:not([hidden])) { padding-bottom: 136px; }
 @media(max-width:720px) { .music-mini-player { right: 12px; bottom: 12px; width: calc(100% - 24px); } .music-controls { gap: 8px; padding: 6px 8px; } }
+
+.music-play-button { display: inline-flex; align-items: center; justify-content: center; }
+.music-play-button svg { flex: none; }
+.music-play-button .music-play-icon { display: block; }
+.music-play-button .music-pause-icon { display: none; }
+.music-play-button[aria-pressed="true"] .music-play-icon { display: none; }
+.music-play-button[aria-pressed="true"] .music-pause-icon { display: block; }

@@ -4,12 +4,46 @@ import '../styles/media.css';
 import '../styles/music-player.css';
 import { ClientRouter } from 'astro:transitions';
 import MusicPlayer from '../components/MusicPlayer.astro';
+import DitherBackground from '../components/DitherBackground.astro';
+import OpeningIntro from '../components/OpeningIntro.astro';
 interface Props { title: string; description: string; page?: 'home' | 'case' | 'prototypes' | 'analysis' | 'audio' | 'about' | 'resume' | 'not-found' }
 const { title, description, page = 'home' } = Astro.props;
 ---
 <!doctype html>
 <html lang="en" transition:animate="none">
   <head>
+    <script is:inline>
+      (() => {
+        if (window.__portfolioIntroDocument) return;
+        window.__portfolioIntroDocument = true;
+        if (location.pathname !== '/' || location.hash || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        document.documentElement.dataset.intro = 'pending';
+        // If the animation bundle cannot load, the site still becomes usable.
+        window.setTimeout(() => {
+          if (!document.documentElement.hasAttribute('data-intro')) return;
+          document.dispatchEvent(new Event('portfolio:intro-timeout'));
+          document.documentElement.removeAttribute('data-intro');
+          document.querySelectorAll('[data-intro-inert]').forEach(element => {
+            element.inert = false;
+            element.removeAttribute('data-intro-inert');
+          });
+          const intro = document.querySelector('site-intro');
+          if (intro) intro.hidden = true;
+        }, 4500);
+      })();
+    </script>
+    <style is:inline>
+      html[data-intro="pending"],
+      html[data-intro="pending"] body { background: #1b2025; }
+      html[data-intro="pending"] dither-background { visibility: hidden; }
+      html[data-intro="pending"] [data-intro-content],
+      html[data-intro="playing"] [data-intro-content],
+      html[data-intro="pending"] dither-background canvas,
+      html[data-intro="playing"] dither-background canvas { visibility: hidden; }
+      @media (prefers-reduced-motion: reduce) {
+        html[data-intro] [data-intro-content] { visibility: visible; }
+      }
+    </style>
     <ClientRouter fallback="swap" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -18,8 +52,10 @@ const { title, description, page = 'home' } = Astro.props;
     <title>{title} - Ethan Bai</title>
   </head>
   <body class={`portfolio ${page}`}>
-    <a class="skip-link" href="#main">Skip to content</a>
-    <header class="header wrap">
+    <DitherBackground />
+    {page === 'home' && <OpeningIntro />}
+    <a class="skip-link" href="#main" data-intro-content>Skip to content</a>
+    <header class="header wrap" data-intro-content>
       <a class="wordmark" href="/" aria-label="Ethan Bai homepage">Ethan Bai<span aria-hidden="true">.</span></a>
       <nav class="primary-nav" aria-label="Main navigation">
         <a class={page === 'home' || page === 'case' ? 'current' : undefined} href="/#work" aria-current={page === 'home' ? 'location' : undefined}>Selected Work</a>
@@ -33,10 +69,10 @@ const { title, description, page = 'home' } = Astro.props;
         <span lang="en" class="language-current">EN</span><span aria-hidden="true">/</span><span lang="zh-CN">中文</span>
       </button>
     </header>
-    <main id="main"><slot /></main>
-    <footer class="footer wrap">
+    <main id="main" tabindex="-1" data-intro-content><slot /></main>
+    <footer class="footer wrap" data-intro-content>
       <div><a class="wordmark" href="/">Ethan Bai<span aria-hidden="true">.</span></a><p>Game Design Student</p></div>
-      <div class="footer-actions"><a href="/about/#contact">Contact <span aria-hidden="true">↗</span></a><a href="/resume/">Resume <span aria-hidden="true">↗</span></a></div>
+      <div class="footer-actions"><a href="/about/#contact">Contact <span aria-hidden="true">↗</span></a><a href="/resume/">Resume <span aria-hidden="true">↗</span></a><button type="button" data-background-toggle hidden>Pause background</button></div>
       <span class="footer-year">2026</span>
     </footer>
     <MusicPlayer />

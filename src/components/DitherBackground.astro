@@ -1,0 +1,39 @@
+<dither-background aria-hidden="true" transition:persist="portfolio-background">
+  <canvas></canvas>
+</dither-background>
+
+<script>
+  import '../scripts/dither-background';
+</script>
+
+<style is:global>
+  body.portfolio { isolation: isolate; }
+  dither-background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    display: block;
+    overflow: hidden;
+    pointer-events: none;
+    background: var(--bg);
+    /* Keep the reading column quiet; allow more texture in the surrounding space. */
+    --dither-opacity: .72;
+  }
+  dither-background canvas {
+    display: block;
+    width: 100%;
+    /* One extra row lets the pixel grid move with fractional scroll positions. */
+    height: calc(100% + var(--dither-scroll-padding, 3px));
+    opacity: var(--dither-opacity);
+    mask-image: radial-gradient(ellipse at 50% 42%, #0005 12%, #000a 65%, #000 100%);
+  }
+  dither-background canvas[hidden] { display: none; }
+  .footer-actions [data-background-toggle] { font-size: 12px; color: var(--muted); }
+  .footer-actions [data-background-toggle]:hover { color: var(--accent); }
+  .footer-actions [data-background-toggle][hidden] { display: none; }
+  @media (max-width: 720px) {
+    dither-background { --dither-opacity: .5; }
+    .footer-actions { display: grid; grid-template-columns: repeat(2, max-content); gap: 0 16px; }
+    .footer-actions [data-background-toggle] { grid-column: 1 / -1; text-align: left; }
+  }
+</style>

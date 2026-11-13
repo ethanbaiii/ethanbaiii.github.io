@@ -1,0 +1,24 @@
+---
+import '../styles/opening-intro.css';
+const name = 'Ethan Bai';
+const shapes = [
+  { kind: 'triangle', x: 28, y: 25, mobileX: 23, mobileY: 28, size: 'clamp(100px, 15vw, 210px)', ratio: '1.1', angle: -12, color: 'var(--intro-mid)' },
+  { kind: 'triangle', x: 73, y: 43, mobileX: 77, mobileY: 53, size: 'clamp(130px, 19vw, 260px)', ratio: '1.1', angle: 26, color: 'var(--intro-deep)' },
+  { kind: 'rectangle', x: 36, y: 69, mobileX: 36, mobileY: 69, size: 'clamp(55px, 6vw, 88px)', ratio: '.55', angle: 15, color: 'var(--intro-deep)' },
+  { kind: 'triangle', x: 60, y: 78, mobileX: 60, mobileY: 73, size: 'clamp(90px, 12vw, 170px)', ratio: '1.1', angle: -8, color: 'var(--intro-mid)' },
+  { kind: 'rectangle', x: 78, y: 72, mobileX: 78, mobileY: 72, size: 'clamp(14px, 1.5vw, 22px)', ratio: '.24', angle: 24, color: 'var(--intro-light)' },
+  { kind: 'rectangle', x: 20, y: 64, mobileX: 20, mobileY: 64, size: 'clamp(20px, 2vw, 30px)', ratio: '.48', angle: -10, color: 'var(--intro-light)' },
+];
+---
+<site-intro role="region" aria-label="Opening animation" hidden>
+  <div class="intro-curtain" aria-hidden="true"></div>
+  <div class="intro-art" aria-hidden="true">
+    {shapes.map(shape => <span class="intro-shape" data-x={shape.x} data-y={shape.y} data-mobile-x={shape.mobileX} data-mobile-y={shape.mobileY} data-angle={shape.angle} style={`--shape-x:${shape.x}%;--shape-y:${shape.y}%;--shape-size:${shape.size};--shape-ratio:${shape.ratio};--shape-angle:${shape.angle}deg;--shape-color:${shape.color}`}><span class={`intro-shape-body ${shape.kind}`}></span></span>)}
+    <p class="intro-title">{Array.from(name).map(letter => letter === ' ' ? <span class="intro-space"> </span> : <span class="intro-letter">{letter}</span>)}</p>
+  </div>
+  <button type="button" class="intro-skip">Skip intro <span aria-hidden="true">↓</span></button>
+</site-intro>
+
+<script>
+  import '../scripts/opening-intro';
+</script>

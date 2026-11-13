@@ -24,7 +24,7 @@ if (player && audio) {
     player.hidden = !track;
     title.textContent = track?.title || 'Music';
     title.setAttribute('aria-label', track ? `Back to Audio: ${track.title}` : 'Back to Audio');
-    toggle.textContent = playing ? 'Pause' : 'Play';
+    toggle.setAttribute('aria-pressed', String(playing));
     toggle.setAttribute('aria-label', `${playing ? 'Pause' : 'Play'} ${track?.title || 'music'}`);
     const length = duration();
     const elapsed = track ? audio.currentTime : 0;
@@ -38,7 +38,6 @@ if (player && audio) {
       const slider = row.querySelector<HTMLInputElement>('[data-music-seek]')!;
       const label = row.querySelector<HTMLElement>('[data-music-time]')!;
       const rowLength = active ? length : Number(row.dataset.duration);
-      button.textContent = active && playing ? 'Pause' : 'Play';
       button.setAttribute('aria-label', `${active && playing ? 'Pause' : 'Play'} ${row.dataset.title}`);
       button.setAttribute('aria-pressed', String(active && playing));
       row.dataset.state = active ? playing ? 'playing' : 'paused' : 'idle';

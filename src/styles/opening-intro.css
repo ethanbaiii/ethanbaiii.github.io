@@ -1,0 +1,89 @@
+/* The curtain is present immediately; it only moves when revealing the homepage. */
+site-intro {
+  --intro-curtain: #1b2025;
+  --intro-ink: #edf0f2;
+  --intro-deep: #344957;
+  --intro-mid: #6f93ad;
+  --intro-light: #b2d2e9;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: block;
+  overflow: hidden;
+  isolation: isolate;
+}
+site-intro[hidden] { display: none; }
+.intro-curtain { position: absolute; inset: 0; background: var(--intro-curtain); transform: translate3d(0, 0, 0); }
+.intro-art { position: absolute; inset: 0; pointer-events: none; }
+.intro-title {
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--intro-ink);
+  font-size: clamp(52px, 12vw, 160px);
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -.055em;
+  white-space: nowrap;
+  margin: 0;
+}
+.intro-letter { display: inline-block; opacity: 0; }
+.intro-space { display: inline-block; width: .27em; }
+.intro-shape { position: absolute; left: var(--shape-x); top: var(--shape-y); width: var(--shape-size); aspect-ratio: var(--shape-ratio); transform: translate(-50%, -50%); }
+.intro-shape-body { display: block; width: 100%; height: 100%; background: var(--shape-color); opacity: 0; }
+.intro-shape-body.triangle { clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.intro-skip {
+  position: absolute;
+  right: max(24px, env(safe-area-inset-right));
+  bottom: max(22px, env(safe-area-inset-bottom));
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  min-height: 44px;
+  padding: 6px 12px;
+  border: 1px solid #6f93ad;
+  border-radius: 3px;
+  color: var(--intro-ink);
+  font-size: 12px;
+  background: var(--intro-curtain);
+}
+.intro-skip:hover { background: var(--intro-deep); border-color: var(--intro-light); }
+.intro-skip:focus-visible { outline: 2px solid var(--intro-light); outline-offset: 5px; }
+html[data-intro] { overflow: hidden; }
+html[data-intro="playing"] .intro-curtain,
+html[data-intro="revealing"] .intro-curtain { animation: intro-curtain-down var(--intro-curtain-duration) cubic-bezier(.76, 0, .24, 1) var(--intro-curtain-start) both; }
+html[data-intro="playing"] .intro-letter,
+html[data-intro="revealing"] .intro-letter {
+  animation:
+    intro-letter-in var(--intro-enter-duration) cubic-bezier(.87, 0, .13, 1) var(--letter-enter-delay) both,
+    intro-letter-out var(--letter-exit-duration) cubic-bezier(.87, 0, .13, 1) var(--letter-exit-delay) forwards;
+}
+html[data-intro="playing"] .intro-shape-body,
+html[data-intro="revealing"] .intro-shape-body { animation: intro-shape-down 1900ms cubic-bezier(.4, 0, .2, 1) both; animation-delay: var(--shape-delay); }
+@keyframes intro-curtain-down {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(0, 100%, 0); }
+}
+@keyframes intro-letter-in {
+  from { transform: translate3d(0, -300%, 0) rotate(var(--letter-enter-angle)); opacity: 0; }
+  to { transform: translate3d(0, 0, 0) rotate(0deg); opacity: 1; }
+}
+@keyframes intro-letter-out {
+  from { transform: translate3d(0, 0, 0) rotate(0deg); opacity: 1; }
+  to { transform: translate3d(0, 300%, 0) rotate(var(--letter-exit-angle)); opacity: 0; }
+}
+@keyframes intro-shape-down {
+  0% { transform: translate3d(0, -75vh, 0) rotate(calc(var(--shape-angle) - 18deg)) scale(.65); opacity: 0; }
+  15% { opacity: 1; }
+  38%, 66% { transform: translate3d(0, 0, 0) rotate(var(--shape-angle)) scale(1); opacity: 1; }
+  100% { transform: translate3d(0, 75vh, 0) rotate(calc(var(--shape-angle) + 14deg)) scale(.85); opacity: 0; }
+}
+@media (max-width: 720px) {
+  .intro-title { top: 45%; }
+  .intro-shape:nth-child(6) { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  site-intro { display: none; }
+  html[data-intro] { overflow: auto; }
+}
