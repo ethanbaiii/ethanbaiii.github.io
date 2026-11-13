@@ -63,7 +63,6 @@ class OpeningIntro extends HTMLElement {
     };
     this.stop = finish;
     this.hidden = false;
-    this.querySelector('button')?.addEventListener('click', finish, { signal: events.signal });
     document.addEventListener('keydown', event => { if (event.key === 'Escape') finish(); }, { signal: events.signal });
     document.addEventListener('astro:before-preparation', finish, { signal: events.signal });
     document.addEventListener('portfolio:intro-timeout', finish, { signal: events.signal });

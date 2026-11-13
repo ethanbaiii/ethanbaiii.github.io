@@ -33,23 +33,6 @@ site-intro[hidden] { display: none; }
 .intro-shape { position: absolute; left: var(--shape-x); top: var(--shape-y); width: var(--shape-size); aspect-ratio: var(--shape-ratio); transform: translate(-50%, -50%); }
 .intro-shape-body { display: block; width: 100%; height: 100%; background: var(--shape-color); opacity: 0; }
 .intro-shape-body.triangle { clip-path: polygon(50% 0, 100% 100%, 0 100%); }
-.intro-skip {
-  position: absolute;
-  right: max(24px, env(safe-area-inset-right));
-  bottom: max(22px, env(safe-area-inset-bottom));
-  display: inline-flex;
-  align-items: center;
-  gap: 18px;
-  min-height: 44px;
-  padding: 6px 12px;
-  border: 1px solid #6f93ad;
-  border-radius: 3px;
-  color: var(--intro-ink);
-  font-size: 12px;
-  background: var(--intro-curtain);
-}
-.intro-skip:hover { background: var(--intro-deep); border-color: var(--intro-light); }
-.intro-skip:focus-visible { outline: 2px solid var(--intro-light); outline-offset: 5px; }
 html[data-intro] { overflow: hidden; }
 html[data-intro="playing"] .intro-curtain,
 html[data-intro="revealing"] .intro-curtain { animation: intro-curtain-down var(--intro-curtain-duration) cubic-bezier(.76, 0, .24, 1) var(--intro-curtain-start) both; }
