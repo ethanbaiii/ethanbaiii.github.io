@@ -11,9 +11,12 @@ const shapes = [
 ];
 ---
 <site-intro role="region" aria-label={Astro.url.pathname.startsWith('/zh/') ? '开场动画' : 'Opening animation'} hidden>
-  <div class="intro-curtain" aria-hidden="true"></div>
+  <div class="intro-curtain" aria-hidden="true">
+    <div class="intro-shapes">
+      {shapes.map(shape => <span class="intro-shape" data-x={shape.x} data-y={shape.y} data-mobile-x={shape.mobileX} data-mobile-y={shape.mobileY} data-angle={shape.angle} style={`--shape-x:${shape.x}%;--shape-y:${shape.y}%;--shape-size:${shape.size};--shape-ratio:${shape.ratio};--shape-angle:${shape.angle}deg;--shape-color:${shape.color}`}><span class={`intro-shape-body ${shape.kind}`}></span></span>)}
+    </div>
+  </div>
   <div class="intro-art" aria-hidden="true">
-    {shapes.map(shape => <span class="intro-shape" data-x={shape.x} data-y={shape.y} data-mobile-x={shape.mobileX} data-mobile-y={shape.mobileY} data-angle={shape.angle} style={`--shape-x:${shape.x}%;--shape-y:${shape.y}%;--shape-size:${shape.size};--shape-ratio:${shape.ratio};--shape-angle:${shape.angle}deg;--shape-color:${shape.color}`}><span class={`intro-shape-body ${shape.kind}`}></span></span>)}
     <p class="intro-title">{Array.from(name).map(letter => letter === ' ' ? <span class="intro-space"> </span> : <span class="intro-letter">{letter}</span>)}</p>
   </div>
 </site-intro>

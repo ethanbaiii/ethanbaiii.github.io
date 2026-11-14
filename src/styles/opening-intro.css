@@ -13,7 +13,9 @@ site-intro {
   isolation: isolate;
 }
 site-intro[hidden] { display: none; }
-.intro-curtain { position: absolute; inset: 0; background: var(--intro-curtain); transform: translate3d(0, 0, 0); }
+.intro-curtain { position: absolute; inset: 0; overflow: hidden; background: var(--intro-curtain); transform: translate3d(0, 0, 0); }
+/* Shapes belong to the curtain and cannot linger over the revealed homepage. */
+.intro-shapes { position: absolute; inset: 0; pointer-events: none; }
 .intro-art { position: absolute; inset: 0; pointer-events: none; }
 .intro-title {
   position: absolute;
