@@ -16,9 +16,9 @@ backLabel: "Selected Work"
 
 <p class="implementation-note">Current Status: Playable.</p>
 
-The earliest design threw the last attached weapon part, while discarding removed the entire weapon. This conflicted with the weapon designer’s goal of giving different weapons distinct throw damage. It also made correcting one misplaced part require rebuilding the whole weapon.
+I originally designed Throw to launch the last attached weapon part and Discard to remove the entire weapon. This conflicted with the weapon designer’s goal of giving different weapons distinct throw damage. It also made correcting one misplaced part require rebuilding the whole weapon.
 
-I revised the actions so that Throw launches the complete weapon and Discard removes one part while preserving the rest of the assembly. I considered a toggle between throwing a part and throwing the whole weapon, but rejected it: damaging part throws could displace Discard, and another control would work against our goal of an approachable party game.
+In later iterations, I changed Throw to launch the complete weapon and Discard to remove one part while preserving the rest of the assembly. I considered a toggle between throwing a part and throwing the whole weapon, but rejected it: damaging part throws could displace Discard, and another control would work against our goal of an approachable party game.
 
 ### Making the throw easier to aim
 
