@@ -3,8 +3,8 @@ id: "overdawn"
 title: "Overdawn"
 role: "音频负责人、音效设计"
 meta: "Unity · 约 20 人团队 · 2025 年 9 月至 2026 年 2 月"
-overview: ["Overdawn 是一款已在 [Steam](https://store.steampowered.com/app/3519070/Overdawn/) 上架的 2.5D 反乌托邦射击游戏。我带领三人音频团队，通过素材编辑、调制和分层，亲自制作了 100 多个用于战斗、技能、UI 和环境的音效资源。另外两位成员主要负责音乐。"]
-description: "Overdawn 是一款已在 Steam 上架的 2.5D 反乌托邦射击游戏。我带领三人音频团队，通过素材编辑、调制和分层，亲自制作了 100 多个用于战斗、技能、UI 和环境的音效资源。另外两位成员主要负责音乐。"
+overview: ["Overdawn 是一款 2.5D 反乌托邦射击游戏，已在 [Steam](https://store.steampowered.com/app/3519070/Overdawn/) 发布完整可玩 Demo。我带领三人音频团队，通过素材编辑、调制和分层，亲自制作了 100 多个用于战斗、技能、UI 和环境的音效资源。另外两位成员主要负责音乐。"]
+description: "Overdawn 是一款 2.5D 反乌托邦射击游戏，已在 Steam 发布完整可玩 Demo。我带领三人音频团队，通过素材编辑、调制和分层，亲自制作了 100 多个用于战斗、技能、UI 和环境的音效资源。另外两位成员主要负责音乐。"
 hero: null
 page: "audio"
 href: "/zh/audio/overdawn/"

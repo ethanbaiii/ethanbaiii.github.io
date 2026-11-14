@@ -3,8 +3,8 @@ id: "overdawn"
 title: "Overdawn"
 role: "Audio Lead & Sound Designer"
 meta: "Unity · ~20-Person Team · Sep 2025–Feb 2026"
-overview: ["Overdawn is a 2.5D dystopian shooter listed on [Steam](https://store.steampowered.com/app/3519070/Overdawn/). I led its three-person audio team and personally created over 100 sound assets for combat, abilities, UI, and environments by editing, modulating, and layering source audio. The other two members primarily worked on music."]
-description: "Overdawn is a 2.5D dystopian shooter listed on Steam. I led its three-person audio team and personally created over 100 sound assets for combat, abilities, UI, and environments by editing, modulating, and layering source audio. The other two members primarily worked on music."
+overview: ["Overdawn is a 2.5D dystopian shooter. Demo released on [Steam](https://store.steampowered.com/app/3519070/Overdawn/). I led its three-person audio team and personally created over 100 sound assets for combat, abilities, UI, and environments by editing, modulating, and layering source audio. The other two members primarily worked on music."]
+description: "Overdawn is a 2.5D dystopian shooter. Demo released on Steam. I led its three-person audio team and personally created over 100 sound assets for combat, abilities, UI, and environments by editing, modulating, and layering source audio. The other two members primarily worked on music."
 hero: null
 page: "audio"
 href: "/audio/overdawn/"
