@@ -1,0 +1,6 @@
+.language-switch a { min-width: 32px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+.language-switch a:hover { color: var(--accent); }
+.language-switch [aria-disabled="true"] { opacity: .45; cursor: default; }
+html[lang="zh-CN"] h1, html[lang="zh-CN"] h2, html[lang="zh-CN"] h3 { letter-spacing: normal; }
+html[lang="zh-CN"] .primary-nav { gap: 18px; }
+@media (max-width: 720px) { html[lang="zh-CN"] .primary-nav { flex-wrap: wrap; justify-content: flex-start; column-gap: 18px; row-gap: 0; } }

@@ -9,6 +9,8 @@ const settings = {
   waveSpeed: 0.01,
   waveFrequency: 5,
   waveAmplitude: 0.3,
+  // Larger values enlarge the wave pattern; pixelSize controls the grain separately.
+  scale: 1.5,
   pixelSize: 3,
   colorLevels: 5,
   frameInterval: 1000 / 30,
@@ -29,6 +31,7 @@ uniform float uScroll;
 uniform float uSpeed;
 uniform float uFrequency;
 uniform float uAmplitude;
+uniform float uScale;
 out vec4 outColor;
 vec4 mod289(vec4 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
 vec4 permute(vec4 x) { return mod289(((x * 34.0) + 1.0) * x); }
@@ -78,6 +81,7 @@ void main() {
   vec2 uv = (gl_FragCoord.xy - 0.5) * uCell / uResolution - 0.5;
   uv.x *= uResolution.x / uResolution.y;
   uv.y -= uScroll / uResolution.y;
+  uv /= uScale;
   float f = clamp(fbm(uv + fbm(uv - uTime * uSpeed)), 0.0, 1.0);
   outColor = vec4(floor(f * 255.0) / 255.0, fract(f * 255.0), 0.0, 1.0);
 }`;
@@ -167,7 +171,7 @@ class DitherBackground extends HTMLElement {
       return;
     }
     const uniforms = (program: WebGLProgram, names: string[]) => Object.fromEntries(names.map(name => [name, gl.getUniformLocation(program, name)]));
-    const w = uniforms(wave, ['uResolution', 'uCell', 'uTime', 'uScroll', 'uSpeed', 'uFrequency', 'uAmplitude']);
+    const w = uniforms(wave, ['uResolution', 'uCell', 'uTime', 'uScroll', 'uSpeed', 'uFrequency', 'uAmplitude', 'uScale']);
     const d = uniforms(dither, ['uField', 'uFieldSize', 'uCell', 'uLevels', 'uScrollCells', 'uBase', 'uHighlight']);
     const reduce = matchMedia('(prefers-reduced-motion: reduce)');
     const events = new AbortController();
@@ -203,7 +207,8 @@ class DitherBackground extends HTMLElement {
       document.querySelectorAll<HTMLButtonElement>('[data-background-toggle]').forEach(button => {
         button.hidden = lost;
         button.disabled = reduce.matches;
-        button.textContent = reduce.matches ? 'Background motion off' : this.paused ? 'Resume background' : 'Pause background';
+        const zh = document.documentElement.lang.startsWith('zh');
+        button.textContent = zh ? (reduce.matches ? '背景动态已关闭' : this.paused ? '继续背景动态' : '暂停背景动态') : (reduce.matches ? 'Background motion off' : this.paused ? 'Resume background' : 'Pause background');
       });
     };
     const draw = () => {
@@ -227,6 +232,7 @@ class DitherBackground extends HTMLElement {
       gl.uniform1f(w.uSpeed, settings.waveSpeed);
       gl.uniform1f(w.uFrequency, settings.waveFrequency);
       gl.uniform1f(w.uAmplitude, settings.waveAmplitude);
+      gl.uniform1f(w.uScale, Math.max(0.05, settings.scale));
       gl.drawArrays(gl.TRIANGLES, 0, 3);
       gl.bindFramebuffer(gl.FRAMEBUFFER, null);
       gl.viewport(0, 0, canvas.width, canvas.height);

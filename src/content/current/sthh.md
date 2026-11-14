@@ -3,8 +3,8 @@ id: "sthh"
 title: "Soft Things Hit Hard"
 role: "Character, Combat & Systems Design"
 meta: "Unreal Engine 5 · ~40-Person Team · Mar 2026–Present"
-overview: ["An up-to-eight-player party battle royale where players assemble everyday objects into improvised weapons and armor. My work covers Moving Mud behavior, character states and transitions, throwing and discarding, and the customization system. I also coordinate character model and animation requirements with art and engineering.","Players control clay characters. After losing their normal body, they continue as Moving Mud, a mobile mud form that collects clay toward revival.","I design the rules, write design documents and engineering specifications, configure parameters, and test behavior in-engine. Engineers implement the systems."]
-description: "An up-to-eight-player party battle royale where players assemble everyday objects into improvised weapons and armor. My work covers Moving Mud behavior, character states and transitions, throwing and discarding, and the customization system. I also coordinate character model and animation requirements with art and engineering."
+overview: ["An up-to-eight-player party battle royale where players assemble everyday objects into improvised weapons and armor. I design character-related gameplay and behavior, as well as the customization system.","I design the rules, write design documents and engineering specifications, configure parameters, and test behavior in-engine. Engineers implement the systems."]
+description: "An up-to-eight-player party battle royale where players assemble everyday objects into improvised weapons and armor. I design character-related gameplay and behavior, as well as the customization system."
 hero: {"id":"STHH-01","label":"Gameplay overview","caption":""}
 page: "case"
 href: "/work/sthh/"
@@ -14,7 +14,7 @@ backLabel: "Selected Work"
 
 ## Throwing and Discarding: Giving Each Action a Purpose
 
-<p class="implementation-note">Current Status: Playable baseline; new features and updates awaiting implementation, including the revised trajectory and hit behavior.</p>
+<p class="implementation-note">Current Status: Playable.</p>
 
 The earliest design threw the last attached weapon part, while discarding removed the entire weapon. This conflicted with the weapon designer’s goal of giving different weapons distinct throw damage. It also made correcting one misplaced part require rebuilding the whole weapon.
 
@@ -32,7 +32,7 @@ I kept Weapon and Mud Throw consistent in their controls and flight rules so pla
 
 The previous specification broke the weapon apart on its first enemy hit. I proposed a short hit window during which it stays connected and can damage additional enemies, once per enemy per throw. The intent is to let different weapon shapes and coverage matter when thrown, rather than ending every throw at the first target.
 
-The revised trajectory and hit window are awaiting engineering integration. Their effects on aiming and weapon choice still need playtesting.
+The new throwing features have improved aiming, but the camera position still needs further adjustment.
 
 ## Customization: Developing a Feature from Defined Categories
 
@@ -44,9 +44,13 @@ I separated previewing, owning, and equipping: preview changes the local preview
 
 For the next update, I designed unique lobby colors while preserving each player’s saved preference. A player uses their preferred color when available, otherwise receives an unoccupied color for that lobby. Automatic assignment does not overwrite the saved preference. This supports player identification without permanently changing a player’s choice because of one lobby conflict. Lobby color assignment is not yet integrated.
 
-## Character Design and Production Support
+<span id="character-design-and-production-support" aria-hidden="true"></span>
+
+## Character Design
 
 <p class="implementation-note">Current Status: Moving Mud has a playable implementation.</p>
+
+Players control clay characters. After losing their normal body, they continue as Moving Mud, a mobile mud form that collects clay toward revival.
 
 The normal character already had an established foundation when I took on this work. I designed the previously absent Moving Mud behavior, character states and transition conditions, and some base character values. I also defined model and animation requirements for both forms and coordinated them with art and engineering.
 

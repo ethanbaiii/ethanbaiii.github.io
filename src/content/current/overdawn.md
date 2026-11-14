@@ -3,8 +3,8 @@ id: "overdawn"
 title: "Overdawn"
 role: "Audio Lead & Sound Designer"
 meta: "Unity · ~20-Person Team · Sep 2025–Feb 2026"
-overview: ["Overdawn is a 2.5D dystopian shooter released on Steam. I led its three-person audio team and personally created over 100 sound assets for combat, abilities, UI, and environments. The other two members primarily worked on music.","My sound work focused on distinguishing attacks, warning players about upcoming abilities, and confirming combat events. I created sounds through source selection, editing, modulation, and layering."]
-description: "Overdawn is a 2.5D dystopian shooter released on Steam. I led its three-person audio team and personally created over 100 sound assets for combat, abilities, UI, and environments. The other two members primarily worked on music."
+overview: ["Overdawn is a 2.5D dystopian shooter listed on [Steam](https://store.steampowered.com/app/3519070/Overdawn/). I led its three-person audio team and personally created over 100 sound assets for combat, abilities, UI, and environments by editing, modulating, and layering source audio. The other two members primarily worked on music."]
+description: "Overdawn is a 2.5D dystopian shooter listed on Steam. I led its three-person audio team and personally created over 100 sound assets for combat, abilities, UI, and environments by editing, modulating, and layering source audio. The other two members primarily worked on music."
 hero: null
 page: "audio"
 href: "/audio/overdawn/"
@@ -14,7 +14,7 @@ backLabel: "Audio"
 
 ## Building the Hidden Boss's Audio
 
-The hidden boss already had combat behavior but lacked audio feedback. I worked with designers to identify the cues it needed, then independently handled its sound work, including projectile attacks, hit reactions, the ultimate, and mechanical wings.
+I worked with designers to identify the hidden boss's audio needs and created sounds for its projectile attacks, hit reactions, ultimate, and mechanical wings.
 
 <figure class="media-frame media-video media-ready" data-media-slot="OVERDAWN-SHOWCASE" data-media-state="ready" data-media-kind="video"><video controls playsinline preload="none" data-managed-media src="/media/overdawn/sound-showcase.en.mp4" poster="/media/overdawn/posters/sound-showcase.en.webp" width="1280" height="720" style="aspect-ratio: 1280 / 720" aria-label="Overdawn hidden boss sound showcase, including charge-up V1 and V2">Your browser does not support this video.</video><figcaption>Hidden boss sound showcase</figcaption></figure>
 

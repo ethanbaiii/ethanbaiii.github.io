@@ -1,0 +1,39 @@
+---
+import Portfolio from '../layouts/Portfolio.astro';
+import MediaSlot from './MediaSlot.astro';
+import MusicTrack from './MusicTrack.astro';
+import media from '../data/media.json';
+import editorial from '../data/editorial.json';
+import copy from '../data/zh.json';
+import {localeFromPath,localizedPath} from '../lib/i18n';
+const locale=localeFromPath(Astro.url.pathname),zh=locale==='zh';
+const text=(en:string,cn:string)=>zh?cn:en;
+const { music } = editorial;
+const overdawn={...editorial.overdawn,...(zh?copy.overdawn:{})};
+const detailHref=localizedPath(overdawn.href,locale);
+const introduction = text("Game sound design and original music.","游戏音效设计与原创音乐。");
+---
+<Portfolio title={text("Audio","音频")} description={introduction} page="audio">
+  <div class="wrap">
+    <header class="collection-intro standalone-intro"><h1>{text("Audio","音频")}</h1><p>{introduction}</p></header>
+    <section id="game-audio" class="audio-section" aria-labelledby="game-audio-title">
+      <h2 id="game-audio-title" class="category-heading">{text("Game Audio","游戏音效")}</h2>
+      <article class="work-item audio-case audio-listing" aria-labelledby="overdawn-title">
+        <MediaSlot id="OVERDAWN-COVER" label="Overdawn project preview" />
+        <div class="work-copy">
+          <header><p class="role">{overdawn.role}</p><h3 id="overdawn-title"><a class="title-link" href={detailHref}>{overdawn.title}</a></h3><p class="project-meta">{overdawn.meta}</p></header>
+          <div class="prose audio-prose">{overdawn.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div>
+          <a class="text-link" href={detailHref}>{text("View Audio Case Study","查看音效案例")} <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+    </section>
+    <section id="music" class="audio-section" aria-labelledby="music-title">
+      <h2 id="music-title" class="category-heading">{text("Original Music","原创音乐")}</h2>
+      <div class="music-list">{music.map(track => <article class="music-track" aria-labelledby={`track-${track.order}-title`}>
+        <header><h3 id={`track-${track.order}-title`}>{zh?track.titleZh:track.title}</h3>
+        <p class="project-meta">{zh&&track.order===5?"单簧管与竖琴作品":track.genre}</p></header>
+        <MusicTrack id={`MUSIC-0${track.order}`} title={track.title} src={media.items[`MUSIC-0${track.order}`].src} duration={media.items[`MUSIC-0${track.order}`].duration} />
+      </article>)}</div>
+    </section>
+  </div>
+</Portfolio>

@@ -10,7 +10,7 @@ const shapes = [
   { kind: 'rectangle', x: 20, y: 64, mobileX: 20, mobileY: 64, size: 'clamp(20px, 2vw, 30px)', ratio: '.48', angle: -10, color: 'var(--intro-light)' },
 ];
 ---
-<site-intro role="region" aria-label="Opening animation" hidden>
+<site-intro role="region" aria-label={Astro.url.pathname.startsWith('/zh/') ? '开场动画' : 'Opening animation'} hidden>
   <div class="intro-curtain" aria-hidden="true"></div>
   <div class="intro-art" aria-hidden="true">
     {shapes.map(shape => <span class="intro-shape" data-x={shape.x} data-y={shape.y} data-mobile-x={shape.mobileX} data-mobile-y={shape.mobileY} data-angle={shape.angle} style={`--shape-x:${shape.x}%;--shape-y:${shape.y}%;--shape-size:${shape.size};--shape-ratio:${shape.ratio};--shape-angle:${shape.angle}deg;--shape-color:${shape.color}`}><span class={`intro-shape-body ${shape.kind}`}></span></span>)}

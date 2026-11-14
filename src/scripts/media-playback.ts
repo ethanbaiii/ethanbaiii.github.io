@@ -19,13 +19,22 @@ if (player && audio) {
   const duration = () => Number.isFinite(audio.duration) && audio.duration > 0 ? audio.duration : track?.duration || 0;
   const clearError = () => { error.hidden = true; error.textContent = ''; };
 
+  const isZh = () => document.documentElement.lang.startsWith('zh');
+  const trackTitle = () => isZh() && track?.id === 'MUSIC-05' ? '月光下的小憩' : track?.title;
+  const failure = () => isZh() ? '暂时无法播放此曲目，请重试。' : 'Could not play this track. Please try again.';
   function sync() {
+    const zh = isZh();
+    player.setAttribute('aria-label', zh ? '音乐播放器' : 'Music player');
+    player.querySelector('[data-music-close]')?.setAttribute('aria-label', zh ? '关闭音乐播放器' : 'Close music player');
+    seek.setAttribute('aria-label', zh ? '调整当前曲目播放进度' : 'Seek current song');
+    if (!error.hidden) error.textContent = failure();
     const playing = Boolean(track && !audio.paused && !audio.ended);
     player.hidden = !track;
-    title.textContent = track?.title || 'Music';
-    title.setAttribute('aria-label', track ? `Back to Audio: ${track.title}` : 'Back to Audio');
+    title.href = zh ? '/zh/audio/#music' : '/audio/#music';
+    title.textContent = trackTitle() || (zh ? '音乐' : 'Music');
+    title.setAttribute('aria-label', zh ? `返回音频页面${track ? '：' + trackTitle() : ''}` : track ? `Back to Audio: ${track.title}` : 'Back to Audio');
     toggle.setAttribute('aria-pressed', String(playing));
-    toggle.setAttribute('aria-label', `${playing ? 'Pause' : 'Play'} ${track?.title || 'music'}`);
+    toggle.setAttribute('aria-label', `${zh ? (playing ? '暂停' : '播放') : (playing ? 'Pause' : 'Play')} ${trackTitle() || (zh ? '音乐' : 'music')}`);
     const length = duration();
     const elapsed = track ? audio.currentTime : 0;
     seek.max = String(length || 1);
@@ -38,7 +47,9 @@ if (player && audio) {
       const slider = row.querySelector<HTMLInputElement>('[data-music-seek]')!;
       const label = row.querySelector<HTMLElement>('[data-music-time]')!;
       const rowLength = active ? length : Number(row.dataset.duration);
-      button.setAttribute('aria-label', `${active && playing ? 'Pause' : 'Play'} ${row.dataset.title}`);
+      const rowTitle = zh && row.dataset.musicTrack === 'MUSIC-05' ? '月光下的小憩' : row.dataset.title;
+      button.setAttribute('aria-label', `${zh ? (active && playing ? '暂停' : '播放') : (active && playing ? 'Pause' : 'Play')} ${rowTitle}`);
+      slider.setAttribute('aria-label', zh ? `调整播放进度：${rowTitle}` : `Seek ${rowTitle}`);
       button.setAttribute('aria-pressed', String(active && playing));
       row.dataset.state = active ? playing ? 'playing' : 'paused' : 'idle';
       slider.max = String(rowLength);
@@ -55,7 +66,7 @@ if (player && audio) {
     const token = ++request;
     void audio.play().catch(reason => {
       if (token !== request || reason?.name === 'AbortError') return;
-      error.textContent = 'Could not play this track. Please try again.';
+      error.textContent = failure();
       error.hidden = false;
       sync();
     });

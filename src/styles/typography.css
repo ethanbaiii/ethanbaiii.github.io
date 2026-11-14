@@ -21,7 +21,7 @@
   font-display: swap;
 }
 :root {
-  --font-body: 'Instrument Sans', Arial, Helvetica, sans-serif;
+  --font-body: 'Instrument Sans', Arial, Helvetica, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', sans-serif;
   --font-display: 'Space Grotesk', var(--font-body);
 }
 /* The opening name and page titles carry the display face; other text stays unified. */

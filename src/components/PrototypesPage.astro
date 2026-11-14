@@ -1,0 +1,36 @@
+---
+import Portfolio from '../layouts/Portfolio.astro';
+import MediaSlot from './MediaSlot.astro';
+import { prototypeGroups } from '../data/prototypes';
+import { moreWork } from '../data/current';
+import { documents, documentsZh } from '../data/documents';
+import {localeFromPath,localizedPath} from '../lib/i18n';
+import copy from '../data/zh.json';
+const locale=localeFromPath(Astro.url.pathname),zh=locale==='zh';
+const text=(en:string,cn:string)=>zh?cn:en;
+const href=(path:string)=>localizedPath(path,locale);
+const groups=prototypeGroups.map(group=>({...group,title:zh?({digital:'游戏Demo',tabletop:'桌游',recreation:'复刻'}[group.id]):group.title,items:group.items.map(item=>zh?documentsZh[item.id].frontmatter:item)}));
+const intro=zh?copy.moreWork[0].description:moreWork[0].description;
+---
+<Portfolio title={text("More Work","更多作品")} description={intro} page="prototypes">
+  <div class="wrap">
+    <a class="back-link" href={href("/#work")}><span aria-hidden="true">←</span> {text("Selected Work","精选作品")}</a>
+    <header class="collection-intro"><h1>{text("More Work","更多作品")}</h1><p>{intro}</p>
+      <nav class="collection-nav" aria-label={text("Work categories","作品分类")}>{groups.map(group => <a class="text-link" href={`#${group.id}`}>{group.title} <span aria-hidden="true">↓</span></a>)}</nav>
+    </header>
+    {groups.map(group => <section class="prototype-group" id={group.id} aria-labelledby={`${group.id}-title`}>
+      <div class="section-title"><h2 id={`${group.id}-title`}>{group.title}</h2></div>
+      {group.items.map(item => <article class="work-item prototype-item" id={item.id} aria-labelledby={`${item.id}-title`}>
+        <MediaSlot id={item.hero!.id} label={item.hero!.label} />
+        <div class="work-copy">
+          {item.role && <p class="role">{item.role}</p>}
+          <h3 id={`${item.id}-title`}>{item.href ? <a class="title-link" href={item.href}>{item.title}</a> : item.title}</h3>
+          <p class="project-meta">{item.meta}</p>
+          {(item.href ? [item.description] : item.overview).map(paragraph => <p class="work-summary">{paragraph}</p>)}
+          {item.href ? <a class="text-link" href={item.href}>{text("View Prototype","查看作品")} <span aria-hidden="true">↗</span></a> : (() => { const Content = (zh?documentsZh:documents)[item.id].Content; return <div class="prototype-body"><Content /></div>; })()}
+        </div>
+      </article>)}
+    </section>)}
+    <div class="collection-end"><a class="text-link" href={href("/#work")}><span aria-hidden="true">←</span> {text("Back to selected work","返回精选作品")}</a><a class="text-link" href="#main">{text("Back to top","返回顶部")} <span aria-hidden="true">↑</span></a></div>
+  </div>
+</Portfolio>

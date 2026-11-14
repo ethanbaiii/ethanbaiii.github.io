@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09",
+  "updated": "2026-11-13",
   "items": {
     "ABOUT-01": {
       "kind": "image",
@@ -74,8 +74,8 @@
       "kind": "video",
       "src": "/media/action-combat/legacy/skill-1.mp4",
       "poster": "/media/action-combat/posters/legacy/skill-1.webp",
-      "alt": "Skill Inheritance Action Combat Prototype: Slam Legacy",
-      "caption": "Slam Legacy",
+      "alt": "Skill Inheritance Action Combat Prototype: S1 Legacy",
+      "caption": "S1 Legacy",
       "width": 720,
       "height": 960
     },
@@ -83,8 +83,8 @@
       "kind": "video",
       "src": "/media/action-combat/legacy/skill-2.mp4",
       "poster": "/media/action-combat/posters/legacy/skill-2.webp",
-      "alt": "Skill Inheritance Action Combat Prototype: Barrage Legacy",
-      "caption": "Barrage Legacy",
+      "alt": "Skill Inheritance Action Combat Prototype: S2 Legacy",
+      "caption": "S2 Legacy",
       "width": 720,
       "height": 960
     },
@@ -92,8 +92,8 @@
       "kind": "video",
       "src": "/media/action-combat/legacy/skill-3.mp4",
       "poster": "/media/action-combat/posters/legacy/skill-3.webp",
-      "alt": "Skill Inheritance Action Combat Prototype: Burst Legacy",
-      "caption": "Burst Legacy",
+      "alt": "Skill Inheritance Action Combat Prototype: S3 Legacy",
+      "caption": "S3 Legacy",
       "width": 720,
       "height": 960
     },
@@ -101,8 +101,8 @@
       "kind": "video",
       "src": "/media/action-combat/skills/skill-1.mp4",
       "poster": "/media/action-combat/posters/skills/skill-1.webp",
-      "alt": "Skill Inheritance Action Combat Prototype: Slam",
-      "caption": "Slam",
+      "alt": "Skill Inheritance Action Combat Prototype: S1 Slam",
+      "caption": "S1 Slam",
       "width": 720,
       "height": 960
     },
@@ -110,8 +110,8 @@
       "kind": "video",
       "src": "/media/action-combat/skills/skill-2.mp4",
       "poster": "/media/action-combat/posters/skills/skill-2.webp",
-      "alt": "Skill Inheritance Action Combat Prototype: Barrage",
-      "caption": "Barrage",
+      "alt": "Skill Inheritance Action Combat Prototype: S2 Barrage",
+      "caption": "S2 Barrage",
       "width": 720,
       "height": 960
     },
@@ -119,8 +119,8 @@
       "kind": "video",
       "src": "/media/action-combat/skills/skill-3.mp4",
       "poster": "/media/action-combat/posters/skills/skill-3.webp",
-      "alt": "Skill Inheritance Action Combat Prototype: Burst",
-      "caption": "Burst",
+      "alt": "Skill Inheritance Action Combat Prototype: S3 Burst",
+      "caption": "S3 Burst",
       "width": 720,
       "height": 960
     },
@@ -168,6 +168,17 @@
       "displayWidth": 240,
       "portrait": false
     },
+    "BAZAAR-COMBO-1-ZH": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-6/combination-1.zh.png",
+      "width": 638,
+      "height": 614,
+      "alt": "组合示例 1",
+      "caption": "组合示例 1",
+      "diagram": false,
+      "displayWidth": 240,
+      "portrait": false
+    },
     "BAZAAR-COMBO-2": {
       "kind": "image",
       "src": "/media/the-bazaar/section-6/combination-2.png",
@@ -175,6 +186,17 @@
       "height": 644,
       "alt": "The Bazaar: Combination example 2.",
       "caption": "Combination example 2",
+      "diagram": false,
+      "displayWidth": 240,
+      "portrait": false
+    },
+    "BAZAAR-COMBO-2-ZH": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-6/combination-2.zh.png",
+      "width": 630,
+      "height": 558,
+      "alt": "组合示例 2",
+      "caption": "组合示例 2",
       "diagram": false,
       "displayWidth": 240,
       "portrait": false
@@ -190,6 +212,17 @@
       "displayWidth": 240,
       "portrait": false
     },
+    "BAZAAR-COMBO-3-ZH": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-6/combination-3.zh.png",
+      "width": 636,
+      "height": 636,
+      "alt": "组合示例 3",
+      "caption": "组合示例 3",
+      "diagram": false,
+      "displayWidth": 240,
+      "portrait": false
+    },
     "BAZAAR-CORE-LOOP": {
       "kind": "image",
       "src": "/media/the-bazaar/section-2/core-game-loop.png",
@@ -197,6 +230,17 @@
       "height": 630,
       "alt": "The Bazaar: Core game loop.",
       "caption": "Core game loop",
+      "diagram": false,
+      "displayWidth": 440,
+      "portrait": false
+    },
+    "BAZAAR-CORE-LOOP-ZH": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-2/core-game-loop.zh.png",
+      "width": 746,
+      "height": 418,
+      "alt": "核心玩法循环",
+      "caption": "核心玩法循环",
       "diagram": false,
       "displayWidth": 440,
       "portrait": false
@@ -223,6 +267,17 @@
       "displayWidth": 600,
       "portrait": false
     },
+    "BAZAAR-EARLY-SHOPS-ZH": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-4/early-shops.zh.png",
+      "width": 1284,
+      "height": 428,
+      "alt": "前期商店",
+      "caption": "前期商店",
+      "diagram": false,
+      "displayWidth": 600,
+      "portrait": false
+    },
     "BAZAAR-ENEMY-RARITY": {
       "kind": "image",
       "src": "/media/the-bazaar/section-4/monster-choices.png",
@@ -245,6 +300,17 @@
       "displayWidth": 280,
       "portrait": false
     },
+    "BAZAAR-FROG-HOLLOW-ZH": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-6/frog-hollow.zh.png",
+      "width": 630,
+      "height": 558,
+      "alt": "蛙鸣洞穴",
+      "caption": "蛙鸣洞穴",
+      "diagram": false,
+      "displayWidth": 280,
+      "portrait": false
+    },
     "BAZAAR-LARGE": {
       "kind": "image",
       "src": "/media/the-bazaar/section-5/large.png",
@@ -252,6 +318,17 @@
       "height": 712,
       "alt": "The Bazaar: Large item.",
       "caption": "Large item",
+      "diagram": false,
+      "displayWidth": 240,
+      "portrait": false
+    },
+    "BAZAAR-LARGE-ZH": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-5/large.zh.png",
+      "width": 634,
+      "height": 590,
+      "alt": "大型物品",
+      "caption": "大型物品",
       "diagram": false,
       "displayWidth": 240,
       "portrait": false
@@ -267,6 +344,17 @@
       "displayWidth": 600,
       "portrait": false
     },
+    "BAZAAR-LATE-SHOPS-ZH": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-4/late-shops.zh.png",
+      "width": 1284,
+      "height": 428,
+      "alt": "中后期商店",
+      "caption": "中后期商店",
+      "diagram": false,
+      "displayWidth": 600,
+      "portrait": false
+    },
     "BAZAAR-MEDIUM": {
       "kind": "image",
       "src": "/media/the-bazaar/section-5/medium.png",
@@ -278,6 +366,17 @@
       "displayWidth": 240,
       "portrait": false
     },
+    "BAZAAR-MEDIUM-ZH": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-5/medium.zh.png",
+      "width": 630,
+      "height": 578,
+      "alt": "中型物品",
+      "caption": "中型物品",
+      "diagram": false,
+      "displayWidth": 240,
+      "portrait": false
+    },
     "BAZAAR-PIANO": {
       "kind": "image",
       "src": "/media/the-bazaar/section-6/piano.png",
@@ -285,6 +384,17 @@
       "height": 608,
       "alt": "The Bazaar: Piano.",
       "caption": "Piano",
+      "diagram": false,
+      "displayWidth": 280,
+      "portrait": false
+    },
+    "BAZAAR-PIANO-ZH": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-6/piano.zh.png",
+      "width": 632,
+      "height": 498,
+      "alt": "钢琴",
+      "caption": "钢琴",
       "diagram": false,
       "displayWidth": 280,
       "portrait": false
@@ -322,6 +432,17 @@
       "displayWidth": 280,
       "portrait": false
     },
+    "BAZAAR-SHARK-RAY-ZH": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-6/shark-ray.zh.png",
+      "width": 634,
+      "height": 588,
+      "alt": "鳐鲨",
+      "caption": "鳐鲨",
+      "diagram": false,
+      "displayWidth": 280,
+      "portrait": false
+    },
     "BAZAAR-SHOP": {
       "kind": "image",
       "src": "/media/the-bazaar/section-2/shop.png",
@@ -344,6 +465,17 @@
       "displayWidth": 240,
       "portrait": false
     },
+    "BAZAAR-SMALL-ZH": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-5/small.zh.png",
+      "width": 640,
+      "height": 664,
+      "alt": "小型物品",
+      "caption": "小型物品",
+      "diagram": false,
+      "displayWidth": 240,
+      "portrait": false
+    },
     "BAZAAR-TORTUGA": {
       "kind": "image",
       "src": "/media/the-bazaar/section-6/tortuga.png",
@@ -351,6 +483,17 @@
       "height": 816,
       "alt": "The Bazaar: Tortuga.",
       "caption": "Tortuga",
+      "diagram": false,
+      "displayWidth": 220,
+      "portrait": false
+    },
+    "BAZAAR-TORTUGA-ZH": {
+      "kind": "image",
+      "src": "/media/the-bazaar/section-6/tortuga.zh.png",
+      "width": 632,
+      "height": 584,
+      "alt": "巨龟托图加",
+      "caption": "巨龟托图加",
       "diagram": false,
       "displayWidth": 220,
       "portrait": false
@@ -512,6 +655,15 @@
       "width": 1280,
       "height": 720
     },
+    "OVERDAWN-SHOWCASE-ZH": {
+      "kind": "video",
+      "src": "/media/overdawn/sound-showcase.zh.mp4",
+      "poster": "/media/overdawn/posters/sound-showcase.zh.webp",
+      "alt": "Overdawn 隐藏 Boss 音效展示",
+      "caption": "隐藏 Boss 音效展示",
+      "width": 1280,
+      "height": 720
+    },
     "OVERDAWN-TRAILER": {
       "kind": "video",
       "src": "/media/overdawn/trailer.mp4",
@@ -594,6 +746,17 @@
       "height": 820,
       "alt": "The Unrealtor living-room connections.",
       "caption": "Living-room connections",
+      "diagram": false,
+      "displayWidth": null,
+      "portrait": false
+    },
+    "UNREALTOR-02-ZH": {
+      "kind": "image",
+      "src": "/media/the-unrealtor/living-room-connections.zh.png",
+      "width": 1600,
+      "height": 875,
+      "alt": "The Unrealtor 客厅连接关系",
+      "caption": "客厅连接关系",
       "diagram": false,
       "displayWidth": null,
       "portrait": false
@@ -684,6 +847,17 @@
       "displayWidth": 360,
       "portrait": false
     },
+    "WTS-02-ZH": {
+      "kind": "image",
+      "src": "/media/way-to-the-sky/core-loop.zh.png",
+      "width": 886,
+      "height": 702,
+      "alt": "核心玩法循环",
+      "caption": "核心玩法循环",
+      "diagram": true,
+      "displayWidth": 360,
+      "portrait": false
+    },
     "WTS-BOSS-FIGHT": {
       "kind": "image",
       "src": "/media/way-to-the-sky/boss-fight.webp",
@@ -724,6 +898,17 @@
       "height": 350,
       "alt": "Conceptual upgrade-effort curve showing new progression variables unlocked after Boss 1 and Boss 2.",
       "caption": "Conceptual progression curve",
+      "diagram": true,
+      "displayWidth": 320,
+      "portrait": false
+    },
+    "WTS-PROGRESSION-ZH": {
+      "kind": "image",
+      "src": "/media/way-to-the-sky/progression.zh.png",
+      "width": 546,
+      "height": 364,
+      "alt": "概念性成长曲线",
+      "caption": "概念性成长曲线",
       "diagram": true,
       "displayWidth": 320,
       "portrait": false

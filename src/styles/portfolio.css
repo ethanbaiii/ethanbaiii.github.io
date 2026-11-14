@@ -87,7 +87,7 @@
 .translation-note { margin-top: 22px; color: var(--muted); font-size: 14px; font-style: italic; }
 .editorial-body > p { color: #cbd2d8; font-size: 16px; line-height: 1.85; margin-top: 20px; }
 .editorial-body > :first-child { margin-top: 0; }
-.editorial-body > h2 { border-top: 1px solid var(--line); padding-top: 34px; margin-top: 42px; }
+.editorial-body > h2 { max-width: none; border-top: 1px solid var(--line); padding-top: 34px; margin-top: 42px; }
 .editorial-body > h2:first-child { border-top: 0; padding-top: 0; }
 .editorial-body > h3 { font-size: 22px; line-height: 1.4; letter-spacing: -.3px; font-weight: 500; margin-top: 30px; }
 .editorial-body > ul, .editorial-body > ol { color: #cbd2d8; padding-left: 22px; font-size: 16px; line-height: 1.85; margin: 20px 0 0; }

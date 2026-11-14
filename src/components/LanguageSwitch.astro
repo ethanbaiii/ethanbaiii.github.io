@@ -1,0 +1,12 @@
+---
+import { localeFromPath, localizedPath, hasChinese } from '../lib/i18n';
+const path = Astro.url.pathname === "/404/" ? "/404.html" : Astro.url.pathname;
+const locale = localeFromPath(path);
+const notFound=path==='/404.html';
+const en = notFound ? '/' : localizedPath(path, 'en');
+---
+<nav class="language-placeholder language-switch" aria-label={locale === 'zh' ? '语言选择' : 'Language selection'}>
+  <a href={en === '/' ? '/?lang=en' : en} lang="en" data-language-choice="en" class:list={{'language-current': locale === 'en'}} aria-current={locale === 'en' ? 'true' : undefined}>EN</a>
+  <span aria-hidden="true">/</span>
+  {hasChinese(path) || notFound ? <a href={notFound ? '/zh/' : localizedPath(path, 'zh')} lang="zh-CN" data-language-choice="zh" class:list={{'language-current': locale === 'zh'}} aria-current={locale === 'zh' ? 'true' : undefined}>中文</a> : <span lang="zh-CN" aria-disabled="true" title="此页面中文版正在准备">中文</span>}
+</nav>

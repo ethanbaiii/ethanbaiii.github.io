@@ -1,5 +1,6 @@
 ---
 import '../styles/typography.css';
+import '../styles/localization.css';
 import '../styles/portfolio.css';
 import '../styles/media.css';
 import '../styles/music-player.css';
@@ -7,20 +8,42 @@ import { ClientRouter } from 'astro:transitions';
 import MusicPlayer from '../components/MusicPlayer.astro';
 import DitherBackground from '../components/DitherBackground.astro';
 import OpeningIntro from '../components/OpeningIntro.astro';
+import LanguageSwitch from '../components/LanguageSwitch.astro';
+import {localeFromPath,localizedPath,englishLabel} from '../lib/i18n';
 interface Props { title: string; description: string; page?: 'home' | 'case' | 'prototypes' | 'analysis' | 'audio' | 'about' | 'resume' | 'not-found' }
 const { title, description, page = 'home' } = Astro.props;
+const locale=localeFromPath(Astro.url.pathname);
+const zh=locale==='zh';
+const text=(en:string,cn:string)=>zh?cn:en;
+const href=(path:string)=>localizedPath(path,locale);
+const label=(en:string,cn:string,path:string)=>text(en,cn)+englishLabel(path,locale);
 ---
 <!doctype html>
-<html lang="en" transition:animate="none">
+<html lang={zh ? "zh-CN" : "en"} transition:animate="none">
   <head>
     <meta charset="UTF-8" />
+    <script is:inline>
+      (() => {
+        if (window.__portfolioLanguageChecked) return;
+        window.__portfolioLanguageChecked = true;
+        const forced = new URLSearchParams(location.search).get('lang');
+        if (forced === 'en' || forced === 'zh') {
+          try { localStorage.setItem('portfolio-language', forced); } catch {}
+        }
+        if (location.pathname !== '/') return;
+        let saved;
+        try { saved = localStorage.getItem('portfolio-language'); } catch {}
+        const choice = forced === 'en' || forced === 'zh' ? forced : saved === 'en' || saved === 'zh' ? saved : ((navigator.languages?.[0] || navigator.language).toLowerCase().startsWith('zh') ? 'zh' : 'en');
+        if (choice === 'zh') location.replace('/zh/' + location.search + location.hash);
+      })();
+    </script>
     <link rel="preload" href="/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
     <link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
     <script is:inline>
       (() => {
         if (window.__portfolioIntroDocument) return;
         window.__portfolioIntroDocument = true;
-        if (location.pathname !== '/' || location.hash || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        if (!['/', '/zh/'].includes(location.pathname) || location.hash || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
         document.documentElement.dataset.intro = 'pending';
         // If the animation bundle cannot load, the site still becomes usable.
         window.setTimeout(() => {
@@ -57,30 +80,29 @@ const { title, description, page = 'home' } = Astro.props;
   <body class={`portfolio ${page}`}>
     <DitherBackground />
     {page === 'home' && <OpeningIntro />}
-    <a class="skip-link" href="#main" data-intro-content>Skip to content</a>
+    <a class="skip-link" href="#main" data-intro-content>{text('Skip to content','跳至正文')}</a>
     <header class="header wrap" data-intro-content>
-      <a class="wordmark" href="/" aria-label="Ethan Bai homepage">Ethan Bai<span aria-hidden="true">.</span></a>
-      <nav class="primary-nav" aria-label="Main navigation">
-        <a class={page === 'home' || page === 'case' ? 'current' : undefined} href="/#work" aria-current={page === 'home' ? 'location' : undefined}>Selected Work</a>
-        <a class={page === 'prototypes' ? 'current' : undefined} href="/prototypes/" aria-current={page === 'prototypes' ? 'page' : undefined}>More Work</a>
-        <a class={page === 'analysis' ? 'current' : undefined} href="/analysis/" aria-current={page === 'analysis' ? 'page' : undefined}>Analysis</a>
-        <a class={page === 'audio' ? 'current' : undefined} href="/audio/" aria-current={page === 'audio' ? 'page' : undefined}>Audio</a>
-        <a class={page === 'about' ? 'current' : undefined} href="/about/" aria-current={page === 'about' ? 'page' : undefined}>About</a>
-        <a class={page === 'resume' ? 'current' : undefined} href="/resume/" aria-current={page === 'resume' ? 'page' : undefined}>Resume</a>
+      <a class="wordmark" href={href('/')} aria-label={text('Ethan Bai homepage','Ethan Bai 首页')}>Ethan Bai<span aria-hidden="true">.</span></a>
+      <nav class="primary-nav" aria-label={text('Main navigation','主导航')}>
+        <a class={page === 'home' || page === 'case' ? 'current' : undefined} href={href('/#work')} aria-current={page === 'home' ? 'location' : undefined}>{text('Selected Work','精选作品')}</a>
+        <a class={page === 'prototypes' ? 'current' : undefined} href={href('/prototypes/')} aria-current={page === 'prototypes' ? 'page' : undefined}>{label('More Work','更多作品','/prototypes/')}</a>
+        <a class={page === 'analysis' ? 'current' : undefined} href={href('/analysis/')} aria-current={page === 'analysis' ? 'page' : undefined}>{label('Analysis','设计分析','/analysis/')}</a>
+        <a class={page === 'audio' ? 'current' : undefined} href={href('/audio/')} aria-current={page === 'audio' ? 'page' : undefined}>{label('Audio','音频','/audio/')}</a>
+        <a class={page === 'about' ? 'current' : undefined} href={href('/about/')} aria-current={page === 'about' ? 'page' : undefined}>{text('About','关于我')}</a>
+        <a class={page === 'resume' ? 'current' : undefined} href={href('/resume/')} aria-current={page === 'resume' ? 'page' : undefined}>{label('Resume','简历','/resume/')}</a>
       </nav>
-      <button class="language-placeholder" type="button" disabled aria-label="Language selection: English; Chinese coming later" title="Language switching will be added later">
-        <span lang="en" class="language-current">EN</span><span aria-hidden="true">/</span><span lang="zh-CN">中文</span>
-      </button>
+      <LanguageSwitch />
     </header>
     <main id="main" tabindex="-1" data-intro-content><slot /></main>
     <footer class="footer wrap" data-intro-content>
-      <div><a class="wordmark" href="/">Ethan Bai<span aria-hidden="true">.</span></a><p>Game Design Student</p></div>
-      <div class="footer-actions"><a href="/about/#contact">Contact <span aria-hidden="true">↗</span></a><a href="/resume/">Resume <span aria-hidden="true">↗</span></a><button type="button" data-background-toggle hidden>Pause background</button></div>
+      <div><a class="wordmark" href={href('/')}>Ethan Bai<span aria-hidden="true">.</span></a><p>{text('Game Design Student','游戏设计学生')}</p></div>
+      <div class="footer-actions"><a href={href('/about/#contact')}>{text('Contact','联系方式')} <span aria-hidden="true">↗</span></a><a href={href('/resume/')}>{label('Resume','简历','/resume/')} <span aria-hidden="true">↗</span></a><button type="button" data-background-toggle hidden>Pause background</button></div>
       <span class="footer-year">2026</span>
     </footer>
     <MusicPlayer />
     <script>
       import '../scripts/media-playback';
+      import '../scripts/language';
     </script>
   </body>
 </html>

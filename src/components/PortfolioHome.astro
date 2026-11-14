@@ -2,23 +2,44 @@
 import Portfolio from '../layouts/Portfolio.astro';
 import MediaSlot from './MediaSlot.astro';
 import { introduction, selectedWork, moreWork } from '../data/current';
+import copy from '../data/zh.json';
+import {localeFromPath,localizedPath,englishLabel} from '../lib/i18n';
+const locale=localeFromPath(Astro.url.pathname), zh=locale==='zh';
+const intro=zh?copy.introduction:introduction;
+const projects=zh?selectedWork.map(p=>({...p,...copy.selectedWork[p.id]})):selectedWork;
+const extras=zh?copy.moreWork:moreWork;
+const href=(path:string)=>localizedPath(path,locale);
 ---
-<Portfolio title="Game Design Student" description={introduction}>
+<Portfolio title={zh?'游戏设计学生':'Game Design Student'} description={intro}>
   <div class="wrap">
-    <section class="home-intro" aria-labelledby="intro-title"><h1 id="intro-title">Game Design Student</h1><p>{introduction}<br /><a class="text-link" href="/about/">About <span aria-hidden="true">↗</span></a></p></section>
+    <section class="home-intro" aria-labelledby="intro-title"><h1 id="intro-title">{zh?'游戏设计学生':'Game Design Student'}<span class="title-stop" aria-hidden="true"></span></h1><p>{intro}<br /><a class="text-link" href={href('/about/')}>{zh?'关于我':'About'} <span aria-hidden="true">↗</span></a></p></section>
     <section id="work" class="selected-work" aria-labelledby="work-title">
-      <div class="section-title"><h2 id="work-title">Selected Work</h2></div>
+      <div class="section-title"><h2 id="work-title">{zh?'精选作品':'Selected Work'}</h2></div>
       <div class="work-list">
-        {selectedWork.map(project => <article class="work-item" aria-labelledby={`${project.id}-heading`}>
-          <MediaSlot showRestrictedNotice={project.id === 'sthh'} id={project.mediaId} label={`${project.title} project preview`} />
-          <div class="work-copy"><p class="role">{project.role}</p><h3 id={`${project.id}-heading`}><a class="title-link" href={project.href}>{project.title}</a></h3><p class="project-meta">{project.meta}</p><p class="work-summary">{project.description}</p>
-            <a class="text-link" href={project.href}>View Project <span aria-hidden="true">↗</span></a>
+        {projects.map(project => <article class="work-item" aria-labelledby={`${project.id}-heading`}>
+          <MediaSlot showRestrictedNotice={project.id === 'sthh'} id={project.mediaId} label={zh?`${project.title} 项目预览`:`${project.title} project preview`} />
+          <div class="work-copy"><p class="role">{project.role}</p><h3 id={`${project.id}-heading`}><a class="title-link" href={href(project.href)}>{project.title}</a></h3><p class="project-meta">{project.meta}</p><p class="work-summary">{project.description}</p>
+            <a class="text-link" href={href(project.href)}>{zh?'查看项目':'View Project'}{englishLabel(project.href,locale)} <span aria-hidden="true">↗</span></a>
           </div>
         </article>)}
       </div>
     </section>
-    <section class="more-work" aria-labelledby="more-title"><div class="section-title"><h2 id="more-title">Explore More</h2></div><div class="more-grid">
-      {moreWork.map(item => <article id={item.id === 'prototypes' ? 'game-prototypes' : item.id === 'analysis' ? 'game-analysis' : 'game-audio'}><h3><a class="title-link" href={item.href}>{item.title}</a></h3><p>{item.description}</p><a class="text-link" href={item.href}>{item.action} <span aria-hidden="true">↗</span></a></article>)}
+    <section class="more-work" aria-labelledby="more-title"><div class="section-title"><h2 id="more-title">{zh?'探索更多':'Explore More'}</h2></div><div class="more-grid">
+      {extras.map(item => <article id={item.id === 'prototypes' ? 'game-prototypes' : item.id === 'analysis' ? 'game-analysis' : 'game-audio'}><h3><a class="title-link" href={href(item.href)}>{item.title}</a></h3><p>{item.description}</p><a class="text-link" href={href(item.href)}>{item.action}{englishLabel(item.href,locale)} <span aria-hidden="true">↗</span></a></article>)}
     </div></section>
   </div>
 </Portfolio>
+
+<style>
+  .title-stop {
+    display: inline-block;
+    width: 0.12em;
+    height: 0.12em;
+    margin-inline-start: 0.08em;
+    background: var(--accent);
+    border-radius: 0;
+  }
+  :global(html[lang="zh-CN"]) .title-stop {
+    vertical-align: -0.08em;
+  }
+</style>

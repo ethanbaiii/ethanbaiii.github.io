@@ -1,9 +1,9 @@
 ---
 id: "way-to-the-sky"
 title: "Way to the Sky"
-role: "Primary Game Designer"
+role: "Balance, Systems & Combat Design"
 meta: "Unity · 2-Person Team · 5 Weeks"
-overview: ["A comedic incremental combat game where players swipe the mouse to slap a training dummy, earn XP equal to the damage dealt, upgrade their stats, and challenge three bosses.","**Current Status: Playable demo.**"]
+overview: ["A comedic incremental combat game where players swipe the mouse to slap a training dummy, earn XP equal to the damage dealt, upgrade their stats, and challenge three bosses.","As the primary designer, I shaped the overall game design and implemented core gameplay systems in Unity with AI-assisted programming.","My teammate focused on art, UI, and swipe input, with additional design and programming contributions."]
 description: "A comedic incremental combat game where players swipe the mouse to slap a training dummy, earn XP equal to the damage dealt, upgrade their stats, and challenge three bosses."
 hero: {"id":"WTS-01","label":"Gameplay overview","caption":"Accelerated-growth walkthrough"}
 page: "case"
@@ -11,12 +11,6 @@ href: "/work/way-to-the-sky/"
 backHref: "/#work"
 backLabel: "Selected Work"
 ---
-
-## My Contribution
-
-As the primary designer, I shaped the overall game design and implemented core gameplay systems in Unity.
-
-My teammate focused on art, UI, and swipe input, with additional design and programming contributions. I used AI-assisted programming, reviewing, integrating, and debugging the generated code.
 
 ## Making Damage Drive Progression
 
@@ -42,7 +36,7 @@ I modeled progression in a spreadsheet. Base Damage is multiplied by 1.30 per le
 
 Expected damage provides a comparison of how many attacks each side would need to win. At Boss 1's level cap, the model predicts about 5.0 player attacks to defeat the boss versus 5.6 boss attacks to defeat the player. With Base Damage one level lower and other stats unchanged, the player's requirement rises to about 6.5 attacks. The player acts first.
 
-<table class="boss-model-table" data-media-slot="WTS-03" data-media-state="ready" data-media-kind="table"><caption>Expected attacks · Player acts first</caption><thead><tr><th scope="col">Metric</th><th scope="col">Boss 1</th><th scope="col">Boss 2</th><th scope="col">Boss 3</th></tr></thead><tbody><tr><th scope="row">Level cap</th><td>Lv.10</td><td>Lv.20</td><td>Lv.30</td></tr><tr><th scope="row">Player hits to defeat boss</th><td>5.0</td><td>5.5</td><td>5.4</td></tr><tr><th scope="row">Boss hits to defeat player</th><td>5.6</td><td>6.7</td><td>6.3</td></tr><tr><th scope="row">Player hits with Base Damage one level below cap</th><td>6.5</td><td>7.1</td><td>7.1</td></tr></tbody></table>
+<table class="boss-model-table" data-media-slot="WTS-03" data-media-state="ready" data-media-kind="table" aria-label="Boss stat comparison"><thead><tr><th scope="col">Metric</th><th scope="col">Boss 1</th><th scope="col">Boss 2</th><th scope="col">Boss 3</th></tr></thead><tbody><tr><th scope="row">Level cap</th><td>Lv.10</td><td>Lv.20</td><td>Lv.30</td></tr><tr><th scope="row">Player hits to defeat boss</th><td>5.0</td><td>5.5</td><td>5.4</td></tr><tr><th scope="row">Boss hits to defeat player</th><td>5.6</td><td>6.7</td><td>6.3</td></tr><tr><th scope="row">Player hits with Base Damage one level below cap</th><td>6.5</td><td>7.1</td><td>7.1</td></tr></tbody></table>
 
 These are expected values, not literal fractions of attacks or measured win rates. Random critical hits can still allow early victories below the target level. Bosses therefore act as checkpoints for reliable progression rather than absolute level locks.
 
@@ -54,4 +48,4 @@ Classroom playtest feedback identified repetitive training and slow access to me
 
 These revisions focused on reward timing and attack feedback. They did not expand the player's choices during combat or add actions that required observation, anticipation, or judgment. Within the five-week schedule, we prioritized completing the training-to-ending flow, leaving the planned dodge and counter mechanics unimplemented.
 
-If revisiting the project, I would first prototype a defensive interaction that asks players to read and respond to boss actions. I would then retest combat length and upgrade pacing around that added decision. The priority would be to make the repeated interaction more engaging before tuning the time to the next reward. This remains a proposed next iteration.
+If revisiting the project, I would first prototype a defensive interaction that asks players to read and respond to boss actions. I would then retest combat length and upgrade pacing around that added decision. The priority would be to make the repeated interaction more engaging before tuning the time to the next reward.

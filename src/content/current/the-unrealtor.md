@@ -3,8 +3,8 @@ id: "the-unrealtor"
 title: "The Unrealtor"
 role: "Level Design"
 meta: "Unity · ~30-Person Team · Jan–May 2026"
-overview: ["A two-player co-op perspective puzzle game, shipped on Steam. Players work together to find target objects and adjust their viewing angles until objects in the environment match a target silhouette.","As part of a four-person design team, I contributed to the final level's puzzle layout, player flow, and room relationships, with a focus on connecting puzzle solutions to visible results."]
-description: "A two-player co-op perspective puzzle game, shipped on Steam. Players work together to find target objects and adjust their viewing angles until objects in the environment match a target silhouette."
+overview: ["A two-player co-op perspective puzzle game inspired by impossible spaces. Players work together to find target objects and adjust their viewing angles until objects in the environment match a target silhouette. Available on [Steam](https://store.steampowered.com/app/4420050/The_Unrealtor/).","As part of a four-person design team, I contributed to the final level's layout and progression."]
+description: "A two-player co-op perspective puzzle game inspired by impossible spaces. Players work together to find target objects and adjust their viewing angles until objects in the environment match a target silhouette. Available on Steam."
 hero: {"id":"UNREALTOR-01","label":"Two-player perspective puzzle","caption":""}
 page: "case"
 href: "/work/the-unrealtor/"
@@ -18,7 +18,7 @@ I joined near the end of Alpha. The core mechanic, tutorial, and first major lev
 
 Faculty review identified excessive scope, unclear puzzle goals, and high overall difficulty. We reduced the number of levels and reworked the puzzles, flow, and room relationships of the remaining content.
 
-Within that effort, I proposed a parallel progression structure for the final level and laid out and iterated on the bedroom, gallery, bathroom, and living-room spaces in Unity. My work included scene arrangement, puzzle-object placement, and perspective relationships. The original core mechanic and programming were handled by other team members; I did not contribute to their implementation.
+Within that effort, I proposed a parallel progression structure for the final level and laid out and iterated on the bedroom, gallery, bathroom, and living-room spaces in Unity. My work included scene arrangement, puzzle-object placement, and perspective relationships. Programmers handled gameplay implementation in the engine.
 
 ## Rethinking the Final Level's Flow
 
@@ -50,8 +50,6 @@ The revised structure separated two tasks that players previously had to solve t
 - **Before:** Discover the target object and find a matching perspective.
 - **After:** Recognize the indicated target, then find a matching perspective.
 
-The cues made the goal more explicit, letting players focus on the perspective-matching mechanic. They also reduced the exploration, hypothesis-building, and experimentation involved in discovering the target.
-
 ### Reflection
 
-If revisiting the level, I would test progressive hints: begin with environmental guidance, then reveal the silhouette and text in stages if the player remains stuck. Further playtesting would be needed to assess the balance between goal clarity and independent discovery. This is a proposed next iteration, not an implemented feature.
+Making the target explicit helped players identify it, but reduced the exploration, hypothesis-building, and experimentation involved in discovering it. If revisiting the level, I would test progressive hints: begin with environmental guidance, then reveal the silhouette and text in stages if the player remains stuck. Further playtesting would be needed to assess the balance between goal clarity and independent discovery.

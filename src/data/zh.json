@@ -1,0 +1,376 @@
+{
+  "introduction": "我喜欢琢磨简单的机制怎样组合出不同的玩法，并把想法做成可以实际游玩的原型。我的项目涉及战斗、系统和关卡设计。",
+  "selectedWork": {
+    "battle-demo": {
+      "title": "技能传承战斗Demo",
+      "role": "战斗与系统设计",
+      "meta": "Unity 6 · 个人项目 · 2026 年 9 至 10 月",
+      "description": "一个第三人称动作战斗Demo，探索三个技能能组合出怎样的战斗体验，带有肉鸽强化机制。"
+    },
+    "sthh": {
+      "title": "Soft Things Hit Hard",
+      "role": "角色、战斗与系统设计",
+      "meta": "Unreal Engine 5 · 约 40 人团队 · 2026 年 3 月至今",
+      "description": "一款最多支持八人的派对大逃杀游戏，玩家把日常物品拼装成武器和装备。我负责角色相关玩法与行为设计，以及外观系统设计。"
+    },
+    "way-to-the-sky": {
+      "title": "Way to the Sky",
+      "role": "数值、系统与战斗设计",
+      "meta": "Unity · 双人团队 · 5 周",
+      "description": "一款以夸张的扇巴掌动作为主题的增量战斗游戏。我负责整体游戏设计，并在 Unity 中实现核心玩法系统。"
+    },
+    "the-unrealtor": {
+      "title": "The Unrealtor",
+      "role": "关卡设计",
+      "meta": "Unity · 约 30 人团队 · 2026 年 1 至 5 月",
+      "description": "一款以“不可能空间”为灵感的双人合作视角解谜游戏。我参与最终关卡的布局和流程设计。"
+    }
+  },
+  "moreWork": [
+    {
+      "id": "prototypes",
+      "title": "更多作品",
+      "description": "一些尝试不同机制和交互方式的游戏原型。",
+      "action": "浏览更多作品",
+      "href": "/prototypes/"
+    },
+    {
+      "id": "analysis",
+      "title": "设计分析",
+      "description": "分析游戏系统怎样影响玩家的选择和体验。",
+      "action": "浏览分析文章",
+      "href": "/analysis/"
+    },
+    {
+      "id": "audio",
+      "title": "音频",
+      "description": "游戏音效设计与原创音乐。",
+      "action": "浏览音频作品",
+      "href": "/audio/"
+    }
+  ],
+  "about": [
+    "你好，我是 Ethan，目前在洛杉矶的南加州大学学习游戏开发与交互设计。",
+    "我玩的游戏比较杂，其中策略、肉鸽、解谜和多人竞技类较多。我喜欢琢磨不同机制之间怎样配合，以及玩家能从中做出哪些选择。",
+    "做设计时，我希望用几个简单的机制给玩家留出发挥的空间，让他们能尝试不同组合，找到自己的玩法。",
+    "游戏之外，我也制作视频和音乐，在 B站发布过音乐、生活和游戏类视频。音乐方面，我喜欢尝试电子音乐、器乐创作等不同风格，音频页面可以听到其中一些作品。",
+    "我比较理性，也有耐心，愿意聆听别人如何看待问题。当交流或试玩带来新的发现时，我也会重新审视自己的想法。我喜欢和有不同视角的人合作。"
+  ],
+  "media": {
+    "STHH-01": {
+      "notice": "项目媒体暂不公开展示"
+    },
+    "ABOUT-01": {
+      "alt": "白宇璁 Ethan Bai 的个人照片"
+    },
+    "BATTLE-01": {
+      "alt": "技能传承战斗Demo游戏画面"
+    },
+    "BATTLE-GAMEPLAY": {
+      "alt": "技能传承战斗Demo：游戏实录",
+      "caption": "游戏实录"
+    },
+    "BATTLE-03": {
+      "alt": "技能传承战斗Demo：普攻强化",
+      "caption": "普攻强化"
+    },
+    "BATTLE-05": {
+      "alt": "技能传承战斗Demo：敌人行为",
+      "caption": "敌人行为"
+    },
+    "BATTLE-06": {
+      "alt": "技能传承战斗Demo：玩家与敌人强化",
+      "caption": "玩家与敌人强化"
+    },
+    "BATTLE-SKILL-1": {
+      "alt": "技能传承战斗Demo：S1 重击",
+      "caption": "S1 重击"
+    },
+    "BATTLE-SKILL-2": {
+      "alt": "技能传承战斗Demo：S2 连射",
+      "caption": "S2 连射"
+    },
+    "BATTLE-SKILL-3": {
+      "alt": "技能传承战斗Demo：S3 爆发",
+      "caption": "S3 爆发"
+    },
+    "BATTLE-LEGACY-1": {
+      "alt": "技能传承战斗Demo：S1 传承",
+      "caption": "S1 传承"
+    },
+    "BATTLE-LEGACY-2": {
+      "alt": "技能传承战斗Demo：S2 传承",
+      "caption": "S2 传承"
+    },
+    "BATTLE-LEGACY-3": {
+      "alt": "技能传承战斗Demo：S3 传承",
+      "caption": "S3 传承"
+    },
+    "ANCHOR-01": {
+      "alt": "游戏实录",
+      "caption": "游戏实录"
+    },
+    "TOWER-01": {
+      "alt": "游戏实录",
+      "caption": "游戏实录"
+    },
+    "SPATIAL-01": {
+      "alt": "游戏实录",
+      "caption": "游戏实录"
+    },
+    "TAPPER-01": {
+      "alt": "游戏实录",
+      "caption": "游戏实录"
+    },
+    "WTS-02": {
+      "alt": "核心玩法循环",
+      "caption": "核心玩法循环"
+    },
+    "WTS-PROGRESSION": {
+      "alt": "概念性成长曲线",
+      "caption": "概念性成长曲线"
+    },
+    "WTS-UPGRADE": {
+      "alt": "属性升级与解锁",
+      "caption": "属性升级与解锁"
+    },
+    "WTS-BOSS-FIGHT": {
+      "alt": "Boss 战",
+      "caption": "Boss 战"
+    },
+    "WTS-NORMAL": {
+      "alt": "普通命中",
+      "caption": "普通命中"
+    },
+    "WTS-CRITICAL": {
+      "alt": "暴击",
+      "caption": "暴击"
+    },
+    "WTS-WALKTHROUGH": {
+      "alt": "加速成长演示",
+      "caption": "加速成长演示"
+    },
+    "UNREALTOR-02": {
+      "alt": "客厅连接关系",
+      "caption": "客厅连接关系"
+    },
+    "UNREALTOR-FLOW-BEFORE": {
+      "alt": "调整前 · 线性流程",
+      "caption": "调整前 · 线性流程"
+    },
+    "UNREALTOR-FLOW-AFTER": {
+      "alt": "调整后 · 并行流程",
+      "caption": "调整后 · 并行流程"
+    },
+    "UNREALTOR-HINT-SILHOUETTE": {
+      "alt": "剪影提示",
+      "caption": "剪影提示"
+    },
+    "UNREALTOR-HINT-INTERACT": {
+      "alt": "交互提示",
+      "caption": "交互提示"
+    },
+    "UNREALTOR-HINT-TEXT": {
+      "alt": "文字提示",
+      "caption": "文字提示"
+    },
+    "UNREALTOR-TRAILER": {
+      "alt": "游戏预告片",
+      "caption": "游戏预告片"
+    },
+    "GOD-PLAYTEST": {
+      "alt": "试玩",
+      "caption": "试玩"
+    },
+    "SPRAWL-PLAYTEST": {
+      "alt": "试玩",
+      "caption": "试玩"
+    },
+    "HOK-BASIC-ATTACK": {
+      "alt": "普通攻击",
+      "caption": "普通攻击"
+    },
+    "HOK-DEFENSE": {
+      "alt": "第一形态技能",
+      "caption": "第一形态技能"
+    },
+    "HOK-OFFENSE": {
+      "alt": "第二形态技能",
+      "caption": "第二形态技能"
+    },
+    "HOK-OVERKILL": {
+      "alt": "第三形态技能",
+      "caption": "第三形态技能"
+    },
+    "HOK-TYPICAL": {
+      "alt": "常见实战流程",
+      "caption": "常见实战流程"
+    },
+    "OVERDAWN-SHOWCASE": {
+      "alt": "隐藏 Boss 音效展示",
+      "caption": "隐藏 Boss 音效展示"
+    },
+    "OVERDAWN-TRAILER": {
+      "alt": "游戏预告片",
+      "caption": "游戏预告片"
+    },
+    "BAZAAR-ADJUST": {
+      "alt": "调整构筑",
+      "caption": "调整构筑"
+    },
+    "BAZAAR-BATTLE": {
+      "alt": "战斗",
+      "caption": "战斗"
+    },
+    "BAZAAR-CORE-LOOP": {
+      "alt": "核心玩法循环",
+      "caption": "核心玩法循环"
+    },
+    "BAZAAR-DAY": {
+      "alt": "每日日程",
+      "caption": "每日日程"
+    },
+    "BAZAAR-EARLY-SHOPS": {
+      "alt": "前期商店",
+      "caption": "前期商店"
+    },
+    "BAZAAR-LATE-SHOPS": {
+      "alt": "中后期商店",
+      "caption": "中后期商店"
+    },
+    "BAZAAR-ENEMY-RARITY": {
+      "alt": "怪物选择",
+      "caption": "怪物选择"
+    },
+    "BAZAAR-SHOP": {
+      "alt": "购买物品",
+      "caption": "购买物品"
+    },
+    "BAZAAR-PVE": {
+      "alt": "怪物战",
+      "caption": "怪物战"
+    },
+    "BAZAAR-PVP": {
+      "alt": "玩家对战",
+      "caption": "玩家对战"
+    },
+    "BAZAAR-SMALL": {
+      "alt": "小型物品",
+      "caption": "小型物品"
+    },
+    "BAZAAR-MEDIUM": {
+      "alt": "中型物品",
+      "caption": "中型物品"
+    },
+    "BAZAAR-LARGE": {
+      "alt": "大型物品",
+      "caption": "大型物品"
+    },
+    "BAZAAR-SHARK-RAY": {
+      "alt": "鳐鲨",
+      "caption": "鳐鲨"
+    },
+    "BAZAAR-TORTUGA": {
+      "alt": "巨龟托图加",
+      "caption": "巨龟托图加"
+    },
+    "BAZAAR-FROG-HOLLOW": {
+      "alt": "蛙鸣洞穴",
+      "caption": "蛙鸣洞穴"
+    },
+    "BAZAAR-PIANO": {
+      "alt": "钢琴",
+      "caption": "钢琴"
+    },
+    "BAZAAR-COMBO-1": {
+      "alt": "组合示例 1",
+      "caption": "组合示例 1"
+    },
+    "BAZAAR-COMBO-2": {
+      "alt": "组合示例 2",
+      "caption": "组合示例 2"
+    },
+    "BAZAAR-COMBO-3": {
+      "alt": "组合示例 3",
+      "caption": "组合示例 3"
+    },
+    "WTS-01": {
+      "alt": "Way to the Sky 训练画面"
+    },
+    "WTS-TITLE": {
+      "alt": "Way to the Sky 标题画面"
+    },
+    "UNREALTOR-01": {
+      "alt": "The Unrealtor 项目封面"
+    },
+    "GOD-01": {
+      "alt": "God of Words 桌游封面"
+    },
+    "SPRAWL-01": {
+      "alt": "Sprawl 桌游封面"
+    },
+    "GOD-RULEBOOK": {
+      "alt": "God of Words 英文规则书"
+    },
+    "SPRAWL-RULEBOOK": {
+      "alt": "Sprawl 英文规则书"
+    },
+    "HOK-01": {
+      "alt": "《王者荣耀》蚩奼"
+    },
+    "BAZAAR-01": {
+      "alt": "《大巴扎》封面"
+    },
+    "OVERDAWN-COVER": {
+      "alt": "Overdawn 项目封面"
+    },
+    "OVERDAWN-RED-COVER": {
+      "alt": "Overdawn 预告片封面"
+    }
+  },
+  "analyses": [
+    {
+      "id": "honor-of-kings",
+      "title": "《王者荣耀》的“三体人”问题 - 以蚩奼为例",
+      "meta": "MOBA 英雄与战斗设计分析",
+      "paragraphs": [
+        "一个英雄能应对多种局面时，怎样才算提供了有意义的选择，又在什么时候变成短板太少、对手难以应对？我以蚩奼的兵器轮换为例，分析功能覆盖、形态推进和跨分路能力中的取舍，并提出让三种形态各有用途与限制的调整方向。"
+      ]
+    },
+    {
+      "id": "the-bazaar",
+      "title": "《大巴扎》为什么好玩 - 又为什么让人上头？",
+      "meta": "肉鸽构筑与系统设计分析",
+      "paragraphs": [
+        "《大巴扎》为什么好玩，又为什么让人想一直玩下去？我从发现物品搭配并看它生效的乐趣出发，讨论每场战斗怎样带来下一步想尝试的事，再用瓦内莎的一套构筑说明物品池、面板空间和标签如何影响组合。"
+      ]
+    }
+  ],
+  "overdawn": {
+    "role": "音频负责人、音效设计",
+    "meta": "Unity · 约 20 人团队 · 2025 年 9 月至 2026 年 2 月",
+    "paragraphs": [
+      "Overdawn 是一款已在 Steam 上架的 2.5D 反乌托邦射击游戏。我带领三人音频团队，并亲自制作了 100 多个用于战斗、技能、UI 和环境的音效资源。"
+    ]
+  },
+  "mediaVariants": {
+    "WTS-02": "WTS-02-ZH",
+    "WTS-PROGRESSION": "WTS-PROGRESSION-ZH",
+    "OVERDAWN-SHOWCASE": "OVERDAWN-SHOWCASE-ZH",
+    "UNREALTOR-02": "UNREALTOR-02-ZH",
+    "BAZAAR-CORE-LOOP": "BAZAAR-CORE-LOOP-ZH",
+    "BAZAAR-EARLY-SHOPS": "BAZAAR-EARLY-SHOPS-ZH",
+    "BAZAAR-LATE-SHOPS": "BAZAAR-LATE-SHOPS-ZH",
+    "BAZAAR-SMALL": "BAZAAR-SMALL-ZH",
+    "BAZAAR-MEDIUM": "BAZAAR-MEDIUM-ZH",
+    "BAZAAR-LARGE": "BAZAAR-LARGE-ZH",
+    "BAZAAR-SHARK-RAY": "BAZAAR-SHARK-RAY-ZH",
+    "BAZAAR-COMBO-1": "BAZAAR-COMBO-1-ZH",
+    "BAZAAR-COMBO-2": "BAZAAR-COMBO-2-ZH",
+    "BAZAAR-COMBO-3": "BAZAAR-COMBO-3-ZH",
+    "BAZAAR-TORTUGA": "BAZAAR-TORTUGA-ZH",
+    "BAZAAR-FROG-HOLLOW": "BAZAAR-FROG-HOLLOW-ZH",
+    "BAZAAR-PIANO": "BAZAAR-PIANO-ZH"
+  },
+  "bilibiliUrl": "https://space.bilibili.com/494190474"
+}

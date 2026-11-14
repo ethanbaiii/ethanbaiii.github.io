@@ -2,7 +2,9 @@
 .media-ready { min-width: 0; }
 .media-ready img, .media-ready video { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 3px; }
 .media-ready video { object-fit: contain; background: #000; }
-.media-ready[data-media-slot="OVERDAWN-TRAILER"] video { object-fit: cover; }
+.media-ready[data-media-slot="OVERDAWN-TRAILER"] video,
+.media-ready[data-media-slot="BATTLE-GAMEPLAY"] video,
+.media-ready[data-media-slot="UNREALTOR-TRAILER"] video { object-fit: cover; }
 .work-item > .media-ready > img, .analysis .summary-layout > .media-ready > img { aspect-ratio: 16 / 9; object-fit: cover; }
 .media-frame figcaption { text-align: center; }
 .media-diagram img { width: 100%; max-width: 100%; margin-inline: auto; background: #fff; }
@@ -43,5 +45,5 @@
   .media-equal-height img { width: auto; height: min(var(--media-image-height), calc((100vw - 44px) / var(--media-max-ratio))); }
 }
 
-.about-copy .prose-link { min-height: 0; gap: 8px; }
+.text-link.prose-link { font-size: inherit; line-height: inherit; min-height: 0; gap: 8px; }
 @media(max-width:1000px) { .analysis .summary-layout { grid-template-columns: 41% minmax(0, 1fr); } }

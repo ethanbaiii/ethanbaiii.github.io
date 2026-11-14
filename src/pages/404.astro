@@ -2,5 +2,42 @@
 import Portfolio from '../layouts/Portfolio.astro';
 ---
 <Portfolio title="Page not found" description="This page could not be found." page="not-found">
-  <div class="wrap not-found-content"><p class="role">404</p><h1>Page not found</h1><p>The page may have moved, or the address may be incorrect.</p><div class="inline-links"><a class="text-link" href="/">Return to selected work <span aria-hidden="true">↗</span></a><a class="text-link" href="/prototypes/">Explore More Work <span aria-hidden="true">↗</span></a></div></div>
+  <div class="wrap not-found-content" data-not-found><p class="role">404</p><h1>Page not found</h1><p>The page may have moved, or the address may be incorrect.</p><div class="inline-links"><a class="text-link" href="/">Return to selected work <span aria-hidden="true">↗</span></a><a class="text-link" href="/prototypes/">Explore More Work <span aria-hidden="true">↗</span></a></div></div>
 </Portfolio>
+
+<script>
+  import {localizedPath} from '../lib/i18n';
+  // Pages serves this one static file for missing URLs in either language.
+  function localizeMissingPage() {
+    if (!document.querySelector('[data-not-found]') || !location.pathname.startsWith('/zh/')) return;
+    document.documentElement.lang='zh-CN';
+    document.documentElement.dataset.locale='zh';
+    document.title='页面未找到 - Ethan Bai';
+    document.querySelector('meta[name="description"]')?.setAttribute('content','未找到此页面，请检查网址或返回首页。');
+    const labels: Record<string,string> = {
+      'Page not found':'页面未找到',
+      'The page may have moved, or the address may be incorrect.':'页面可能已移动，或网址有误。',
+      'Return to selected work':'返回精选作品','Explore More Work':'浏览更多作品',
+      'Selected Work':'精选作品','More Work':'更多作品','Analysis':'设计分析',
+      'Audio':'音频','About':'关于我','Resume':'简历','Contact':'联系方式',
+      'Game Design Student':'游戏设计学生','Skip to content':'跳至正文',
+    };
+    const elements=document.querySelectorAll('[data-not-found] h1,[data-not-found] p,[data-not-found] a,.primary-nav a,.footer p,.footer-actions a,.skip-link');
+    elements.forEach(element=>element.childNodes.forEach(node=>{
+      if(node.nodeType!==Node.TEXT_NODE)return;
+      const replacement=labels[node.textContent?.trim()||''];
+      if(replacement)node.textContent=node.textContent!.replace(node.textContent!.trim(),replacement);
+    }));
+    document.querySelectorAll<HTMLAnchorElement>('[data-not-found] a,.primary-nav a,.footer a,.wordmark').forEach(link=>link.setAttribute('href',localizedPath(link.getAttribute('href')!,'zh')));
+    document.querySelector('.primary-nav')?.setAttribute('aria-label','主导航');
+    document.querySelector('.header .wordmark')?.setAttribute('aria-label','Ethan Bai 首页');
+    const switcher=document.querySelector('.language-switch');
+    if(switcher){
+      switcher.setAttribute('aria-label','语言选择');
+      switcher.innerHTML='<a href="/?lang=en" lang="en" data-language-choice="en">EN</a><span aria-hidden="true">/</span><a href="/zh/" lang="zh-CN" data-language-choice="zh" class="language-current" aria-current="true">中文</a>';
+    }
+  }
+  document.addEventListener('astro:after-swap',localizeMissingPage);
+  document.addEventListener('astro:page-load',localizeMissingPage);
+  localizeMissingPage();
+</script>

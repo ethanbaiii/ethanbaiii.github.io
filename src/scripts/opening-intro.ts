@@ -3,7 +3,7 @@
 // Source and resource terms are recorded in THIRD_PARTY_NOTICES.md.
 const sequence = {
   enterDuration: 680,
-  exitStart: 1240,
+  exitStart: 1000,
   exitDurationMin: 680,
   exitDurationMax: 820,
   letterJitter: 60,

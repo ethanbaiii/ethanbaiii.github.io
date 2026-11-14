@@ -1,20 +1,34 @@
 ---
 import Portfolio from '../layouts/Portfolio.astro';
 import MediaSlot from './MediaSlot.astro';
-import { documents } from '../data/documents';
+import { documents, documentsZh } from '../data/documents';
+import {localeFromPath,localizedPath,englishLabel} from '../lib/i18n';
 import { selectedWork } from '../data/current';
 import { pageMedia, mediaRestrictions } from '../lib/media.mjs';
 interface Props { id: string }
 const { id } = Astro.props;
-const document = documents[id];
+const locale=localeFromPath(Astro.url.pathname), zh=locale==='zh';
+const text=(en:string,cn:string)=>zh?cn:en;
+const document = zh ? documentsZh[id] : documents[id];
 if (!document) throw new Error(`Unknown editorial document: ${id}`);
 const { Content, frontmatter: content } = document;
 const mediaRestriction = mediaRestrictions[id];
 const heroId = mediaRestriction ? null : pageMedia[id]?.hero || content.hero?.id;
-const headings = document.getHeadings().filter(heading => heading.depth === 2);
+const headings = (content.headings || document.getHeadings()).filter(heading => heading.depth === 2);
 const plain = (text: string) => text.replaceAll('**', '');
+const inlineLinks = (value: string) => {
+  const parts: { text: string; href?: string }[] = [];
+  let start = 0;
+  for (const match of value.matchAll(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g)) {
+    if (match.index! > start) parts.push({text:value.slice(start,match.index)});
+    parts.push({text:match[1],href:match[2]});
+    start=match.index!+match[0].length;
+  }
+  if(start < value.length) parts.push({text:value.slice(start)});
+  return parts;
+};
 const caseOrder = selectedWork.map(project => project.id);
-const next = content.page === 'case' ? documents[caseOrder[(caseOrder.indexOf(id) + 1) % caseOrder.length]].frontmatter : null;
+const next = content.page === 'case' ? (zh ? documentsZh : documents)[caseOrder[(caseOrder.indexOf(id) + 1) % caseOrder.length]].frontmatter : null;
 ---
 <Portfolio title={content.title} description={content.description} page={content.page}>
   <div class="wrap editorial-page">
@@ -24,16 +38,16 @@ const next = content.page === 'case' ? documents[caseOrder[(caseOrder.indexOf(id
       <h1>{content.title}</h1>
       {content.meta && <p class="case-meta">{content.meta}</p>}
       {content.translation && <p class="translation-note">{content.translation}</p>}
-      {content.overview.map(paragraph => <p class={paragraph.startsWith('**Current Status:') ? 'implementation-note case-summary' : 'case-summary'}>{plain(paragraph)}</p>)}
+      {content.overview.map(paragraph => <p class={(paragraph.startsWith('**Current Status:') || paragraph.startsWith('**当前状态：')) ? 'implementation-note case-summary' : 'case-summary'}>{inlineLinks(plain(paragraph)).map(part => part.href ? <a class="text-link prose-link" href={part.href} target="_blank" rel="noopener noreferrer">{part.text} <span aria-hidden="true">↗</span></a> : part.text)}</p>)}
     </header>
-    {mediaRestriction && <p class="media-restriction-note" role="note">{mediaRestriction.detailNotice}</p>}
+    {mediaRestriction && <p class="media-restriction-note" role="note">{text(mediaRestriction.detailNotice,'现阶段暂不公开展示项目图片和视频。按照项目规定，我负责的工作可以在面试或求职申请中，通过私人链接向招聘方展示。')}</p>}
     {heroId && <MediaSlot id={heroId} label={content.hero?.label || content.title + ' project introduction'} caption={content.hero?.caption || undefined} class="case-hero-media" eager />}
     <div class="case-layout">
-      <aside class="case-directory"><nav aria-label="On this page"><p>On this page</p>{headings.map(heading => <a href={`#${heading.slug}`}>{heading.text}</a>)}</nav></aside>
-      <article class="case-body editorial-body" aria-label={content.page === 'analysis' ? `${content.title} full article` : `${content.title} case study`}>
+      <aside class="case-directory"><nav aria-label={text('On this page','本页目录')}><p>{text('On this page','本页目录')}</p>{headings.map(heading => <a href={`#${heading.slug}`}>{heading.text}</a>)}</nav></aside>
+      <article class="case-body editorial-body" aria-label={zh ? `${content.title}正文` : content.page === 'analysis' ? `${content.title} full article` : `${content.title} case study`}>
         <Content />
-        <div class="case-end"><a class="text-link" href={content.backHref}><span aria-hidden="true">←</span> Back to {content.backLabel}</a><a class="text-link" href="#main">Back to top <span aria-hidden="true">↑</span></a></div>
-        {next && <nav class="project-pager" aria-label="Next project"><span>Next project</span><a href={next.href}>{next.title} <span aria-hidden="true">↗</span></a></nav>}
+        <div class="case-end"><a class="text-link" href={content.backHref}><span aria-hidden="true">←</span> {text('Back to ','返回')}{content.backLabel}</a><a class="text-link" href="#main">{text('Back to top','返回顶部')} <span aria-hidden="true">↑</span></a></div>
+        {next && <nav class="project-pager" aria-label={text('Next project','下一个项目')}><span>{text('Next project','下一个项目')}</span><a href={localizedPath(next.href,locale)}>{next.title}{englishLabel(next.href,locale)} <span aria-hidden="true">↗</span></a></nav>}
       </article>
     </div>
   </div>
