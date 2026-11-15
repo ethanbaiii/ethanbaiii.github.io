@@ -1,6 +1,8 @@
 ---
 import Portfolio from '../layouts/Portfolio.astro';
 import MediaSlot from './MediaSlot.astro';
+import DemoDownload from './DemoDownload.astro';
+import demos from '../data/demos.json';
 import { documents, documentsZh } from '../data/documents';
 import {localeFromPath,localizedPath,englishLabel} from '../lib/i18n';
 import { selectedWork } from '../data/current';
@@ -14,6 +16,7 @@ if (!document) throw new Error(`Unknown editorial document: ${id}`);
 const { Content, frontmatter: content } = document;
 const mediaRestriction = mediaRestrictions[id];
 const heroId = mediaRestriction ? null : pageMedia[id]?.hero || content.hero?.id;
+const hasDemo = Object.hasOwn(demos, id);
 const headings = (content.headings || document.getHeadings()).filter(heading => heading.depth === 2);
 const plain = (text: string) => text.replaceAll('**', '');
 const inlineLinks = (value: string) => {
@@ -42,8 +45,9 @@ const next = content.page === 'case' ? (zh ? documentsZh : documents)[caseOrder[
     </header>
     {mediaRestriction && <p class="media-restriction-note" role="note">{text(mediaRestriction.detailNotice,'现阶段暂不公开展示项目图片和视频。按照项目规定，我负责的工作可以在面试或求职申请中，通过私人链接向招聘方展示。')}</p>}
     {heroId && <MediaSlot id={heroId} label={content.hero?.label || content.title + ' project introduction'} caption={content.hero?.caption || undefined} class="case-hero-media" eager />}
+    {hasDemo && <DemoDownload id={id} />}
     <div class="case-layout">
-      <aside class="case-directory"><nav aria-label={text('On this page','本页目录')}><p>{text('On this page','本页目录')}</p>{headings.map(heading => <a href={`#${heading.slug}`}>{heading.text}</a>)}</nav></aside>
+      <aside class="case-directory"><nav aria-label={text('On this page','本页目录')}><p>{text('On this page','本页目录')}</p><>{hasDemo && <a href="#play-demo">{text('Play the Demo','试玩 Demo')}</a>}</>{headings.map(heading => <a href={`#${heading.slug}`}>{heading.text}</a>)}</nav></aside>
       <article class="case-body editorial-body" aria-label={zh ? `${content.title}正文` : content.page === 'analysis' ? `${content.title} full article` : `${content.title} case study`}>
         <Content />
         <div class="case-end"><a class="text-link" href={content.backHref}><span aria-hidden="true">←</span> {text('Back to ','返回')}{content.backLabel}</a><a class="text-link" href="#main">{text('Back to top','返回顶部')} <span aria-hidden="true">↑</span></a></div>

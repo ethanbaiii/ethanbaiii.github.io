@@ -1,0 +1,36 @@
+{
+  "battle-demo": {
+    "release": "https://github.com/ethanbaiii/ethanbaiii.github.io/releases/tag/demos-2026-11-14",
+    "downloads": [
+      {
+        "platform": "Windows",
+        "filename": "ActionCombatDemo_Win.zip",
+        "bytes": 76358378,
+        "href": "https://github.com/ethanbaiii/ethanbaiii.github.io/releases/download/demos-2026-11-14/ActionCombatDemo_Win.zip"
+      },
+      {
+        "platform": "macOS",
+        "filename": "ActionCombatDemo_Mac.zip",
+        "bytes": 84862810,
+        "href": "https://github.com/ethanbaiii/ethanbaiii.github.io/releases/download/demos-2026-11-14/ActionCombatDemo_Mac.zip"
+      }
+    ]
+  },
+  "way-to-the-sky": {
+    "release": "https://github.com/ethanbaiii/ethanbaiii.github.io/releases/tag/demos-2026-11-14",
+    "downloads": [
+      {
+        "platform": "Windows",
+        "filename": "WayToTheSky_Windows.zip",
+        "bytes": 56826917,
+        "href": "https://github.com/ethanbaiii/ethanbaiii.github.io/releases/download/demos-2026-11-14/WayToTheSky_Windows.zip"
+      },
+      {
+        "platform": "macOS",
+        "filename": "WayToTheSky_Mac.zip",
+        "bytes": 64906745,
+        "href": "https://github.com/ethanbaiii/ethanbaiii.github.io/releases/download/demos-2026-11-14/WayToTheSky_Mac.zip"
+      }
+    ]
+  }
+}

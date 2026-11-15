@@ -1,0 +1,34 @@
+---
+import demos from '../data/demos.json';
+import { localeFromPath } from '../lib/i18n';
+interface Props { id: string }
+const { id } = Astro.props;
+const locale = localeFromPath(Astro.url.pathname), zh = locale === 'zh';
+const demo = demos[id as keyof typeof demos];
+const size = (bytes: number) => `${(bytes / 1_000_000).toFixed(1)} MB`;
+---
+{demo && <section id="play-demo" class="demo-download" data-demo-project={id} aria-labelledby="play-demo-title">
+  <div class="demo-heading">
+    <h2 id="play-demo-title">{zh ? '试玩 Demo' : 'Play the Demo'}</h2>
+    <p>{zh ? '下载包内附操作说明。' : 'Downloads include instructions.'}</p>
+  </div>
+  <div class="demo-downloads">
+    {demo.downloads.map(file => <div class="demo-file">
+      <a class="download-button" href={file.href} data-astro-reload data-demo-download={file.platform}>
+        {zh ? `${file.platform} 下载` : `Download for ${file.platform}`} <span aria-hidden="true">↓</span>
+      </a>
+      <span class="demo-file-size">ZIP · {size(file.bytes)}</span>
+    </div>)}
+  </div>
+</section>}
+<style>
+  .demo-download { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-top: 36px; padding: 28px 0 32px; }
+  .demo-heading h2 { font-size: 29px; line-height: 1.25; font-weight: 500; letter-spacing: -.8px; }
+  .demo-heading p { color: var(--muted); font-size: 14px; line-height: 1.7; margin-top: 12px; }
+  .demo-downloads { display: flex; flex-wrap: wrap; gap: 16px 28px; margin-top: 22px; }
+  .demo-file { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
+  .demo-file-size { color: var(--muted); font-size: 13px; }
+  @media (max-width: 720px) {
+    .demo-heading h2 { font-size: 27px; }
+  }
+</style>
