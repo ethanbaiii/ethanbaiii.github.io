@@ -5,6 +5,8 @@
 .media-ready[data-media-slot="OVERDAWN-TRAILER"] video,
 .media-ready[data-media-slot="BATTLE-GAMEPLAY"] video,
 .media-ready[data-media-slot="UNREALTOR-TRAILER"] video { object-fit: cover; }
+/* Preserve the complete video frame when fullscreen changes its aspect ratio. */
+.media-ready video:is(:fullscreen, :-webkit-full-screen) { object-fit: contain; }
 .work-item > .media-ready > img, .analysis .summary-layout > .media-ready > img { aspect-ratio: 16 / 9; object-fit: cover; }
 .media-frame figcaption { text-align: center; }
 .media-diagram img { width: 100%; max-width: 100%; margin-inline: auto; background: #fff; }

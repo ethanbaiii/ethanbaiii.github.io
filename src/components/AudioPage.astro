@@ -19,7 +19,7 @@ const introduction = text("Game sound design and original music.","游戏音效�
     <section id="game-audio" class="audio-section" aria-labelledby="game-audio-title">
       <h2 id="game-audio-title" class="category-heading">{text("Game Audio","游戏音效")}</h2>
       <article class="work-item audio-case audio-listing" aria-labelledby="overdawn-title">
-        <MediaSlot id="OVERDAWN-COVER" label="Overdawn project preview" />
+        <MediaSlot id={media.pages.overdawn.hero} label="Overdawn project preview" />
         <div class="work-copy">
           <header><p class="role">{overdawn.role}</p><h3 id="overdawn-title"><a class="title-link" href={detailHref}>{overdawn.title}</a></h3><p class="project-meta">{overdawn.meta}</p></header>
           <div class="prose audio-prose">{overdawn.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div>

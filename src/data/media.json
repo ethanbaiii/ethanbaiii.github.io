@@ -821,7 +821,7 @@
       "src": "/media/the-unrealtor/trailer.mp4",
       "poster": "/media/the-unrealtor/cover.webp",
       "alt": "The Unrealtor project trailer",
-      "caption": "Project trailer",
+      "caption": "Game Trailer",
       "width": 1280,
       "height": 720
     },
@@ -940,7 +940,7 @@
       "src": "/media/way-to-the-sky/walkthrough.mp4",
       "poster": "/media/way-to-the-sky/title.webp",
       "alt": "Way to the Sky accelerated-growth gameplay walkthrough",
-      "caption": "Accelerated-growth walkthrough",
+      "caption": "Gameplay (with accelerated progression)",
       "width": 1280,
       "height": 720
     }

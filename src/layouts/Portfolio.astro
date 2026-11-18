@@ -75,7 +75,7 @@ const label=(en:string,cn:string,path:string)=>text(en,cn)+englishLabel(path,loc
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex,nofollow" />
     <meta name="description" content={description} />
-    <title>{title} - Ethan Bai</title>
+    <title>{page === 'home' ? `Ethan Bai - ${title}` : `${title} - Ethan Bai`}</title>
   </head>
   <body class={`portfolio ${page}`}>
     <DitherBackground />

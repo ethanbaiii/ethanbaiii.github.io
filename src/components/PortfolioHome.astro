@@ -1,6 +1,7 @@
 ---
 import Portfolio from '../layouts/Portfolio.astro';
 import MediaSlot from './MediaSlot.astro';
+import { pageMedia } from '../lib/media.mjs';
 import { introduction, selectedWork, moreWork } from '../data/current';
 import copy from '../data/zh.json';
 import {localeFromPath,localizedPath,englishLabel} from '../lib/i18n';
@@ -10,14 +11,14 @@ const projects=zh?selectedWork.map(p=>({...p,...copy.selectedWork[p.id]})):selec
 const extras=zh?copy.moreWork:moreWork;
 const href=(path:string)=>localizedPath(path,locale);
 ---
-<Portfolio title={zh?'游戏设计学生':'Game Design Student'} description={intro}>
+<Portfolio title={zh?'游戏设计作品集':'Game Design Portfolio'} description={intro}>
   <div class="wrap">
     <section class="home-intro" aria-labelledby="intro-title"><h1 id="intro-title">{zh?'游戏设计学生':'Game Design Student'}<span class="title-stop" aria-hidden="true"></span></h1><p>{intro}<br /><a class="text-link" href={href('/about/')}>{zh?'关于我':'About'} <span aria-hidden="true">↗</span></a></p></section>
     <section id="work" class="selected-work" aria-labelledby="work-title">
       <div class="section-title"><h2 id="work-title">{zh?'精选作品':'Selected Work'}</h2></div>
       <div class="work-list">
         {projects.map(project => <article class="work-item" aria-labelledby={`${project.id}-heading`}>
-          <MediaSlot showRestrictedNotice={project.id === 'sthh'} id={project.mediaId} label={zh?`${project.title} 项目预览`:`${project.title} project preview`} />
+          <MediaSlot showRestrictedNotice={project.id === 'sthh'} id={pageMedia[project.id]?.hero || project.mediaId} label={zh?`${project.title} 项目预览`:`${project.title} project preview`} />
           <div class="work-copy"><p class="role">{project.role}</p><h3 id={`${project.id}-heading`}><a class="title-link" href={href(project.href)}>{project.title}</a></h3><p class="project-meta">{project.meta}</p><p class="work-summary">{project.description}</p>
             <a class="text-link" href={href(project.href)}>{zh?'查看项目':'View Project'}{englishLabel(project.href,locale)} <span aria-hidden="true">↗</span></a>
           </div>
