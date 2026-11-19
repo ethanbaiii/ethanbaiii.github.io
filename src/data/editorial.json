@@ -1,6 +1,6 @@
 {
   "updated": "2026-11-05",
-  "introduction": "I enjoy exploring how simple mechanics can come together to create varied gameplay experiences. My projects span combat, systems, and level design, with a focus on developing ideas into playable experiences.",
+  "introduction": "Hi, I'm Ethan, a game design student at USC. I enjoy exploring how mechanics interact and designing rules and tradeoffs that give players room to experiment, discover combinations, and develop their own approaches.",
   "selectedWork": [
     {
       "id": "battle-demo",
@@ -181,11 +181,10 @@
     }
   ],
   "about": [
-    "Hi, I'm Ethan. I study Game Development and Interactive Design at the University of Southern California in Los Angeles.",
-    "I play a wide range of games, especially strategy, roguelite, puzzle, and competitive multiplayer titles. I enjoy figuring out how their mechanics work together and exploring the different choices they give players.",
-    "I'm especially interested in how a few simple mechanics can create different ways to play. In my own designs, I want to give players room to experiment, discover combinations, and develop their own approaches.",
-    "Outside of game development, I make videos and music. I've posted videos about music, daily life, and games on Bilibili. I enjoy exploring different musical styles, from electronic tracks to instrumental compositions. You can listen to some of my music on the Audio page.",
-    "I'd describe myself as thoughtful and patient. I like hearing how other people see a problem, and I'm comfortable reconsidering an idea when a conversation or playtest gives me a reason to. I enjoy working with people who bring different perspectives."
+    "Hi, I'm Ethan. I study Game Development and Interactive Design at the University of Southern California in Los Angeles. I'm primarily interested in gameplay design, particularly systems and combat.",
+    "I enjoy exploring how mechanics interact, from skill combinations in combat to the choices involved in shaping a build. I'm interested in how rules, resources, and tradeoffs give players reasons to try different approaches, and how those choices affect what they do from moment to moment.",
+    "I'd describe myself as thoughtful and patient. I like hearing how other people see a problem, and I'm comfortable reconsidering an idea when a conversation or playtest gives me a reason to. I enjoy working with people who bring different perspectives.",
+    "Outside of game development, I make videos and music. I've posted videos about music, daily life, and games on Bilibili, and I enjoy experimenting with different musical styles. If you're interested, you can listen to some of my music on the Audio page."
   ],
   "overdawn": {
     "title": "Overdawn",

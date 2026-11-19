@@ -13,7 +13,13 @@ const href=(path:string)=>localizedPath(path,locale);
 ---
 <Portfolio title={zh?'游戏设计作品集':'Game Design Portfolio'} description={intro}>
   <div class="wrap">
-    <section class="home-intro" aria-labelledby="intro-title"><h1 id="intro-title">{zh?'游戏设计学生':'Game Design Student'}<span class="title-stop" aria-hidden="true"></span></h1><p>{intro}<br /><a class="text-link" href={href('/about/')}>{zh?'关于我':'About'} <span aria-hidden="true">↗</span></a></p></section>
+    <section class="home-intro" aria-labelledby="intro-title">
+      <div class="home-positioning">
+        <h1 id="intro-title">{zh?'玩法设计':'Gameplay Design'}<span class="title-stop" aria-hidden="true"></span></h1>
+        <p class="home-focus">{zh?'系统与战斗':'Systems & Combat'}</p>
+      </div>
+      <p>{intro}<br /><a class="text-link" href={href('/about/')}>{zh?'关于我':'About'} <span aria-hidden="true">↗</span></a></p>
+    </section>
     <section id="work" class="selected-work" aria-labelledby="work-title">
       <div class="section-title"><h2 id="work-title">{zh?'精选作品':'Selected Work'}</h2></div>
       <div class="work-list">
@@ -32,6 +38,13 @@ const href=(path:string)=>localizedPath(path,locale);
 </Portfolio>
 
 <style>
+  .home-focus {
+    margin-top: 14px;
+    color: var(--accent);
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: 500;
+  }
   .title-stop {
     display: inline-block;
     width: 0.12em;
